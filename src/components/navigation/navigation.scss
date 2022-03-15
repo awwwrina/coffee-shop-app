@@ -30,11 +30,10 @@
             }
         }
     }  
-
 }
 .black {
     position: relative;
-    margin: 52px auto 0;
+    margin: 0 auto;
     ul {
         &::before {
             background: url('../../logo/two-black-beans-logo.svg.svg') no-repeat;

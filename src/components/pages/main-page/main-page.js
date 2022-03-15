@@ -39,24 +39,31 @@ class MainPage extends Component {
                 <section className="best">
                         <div className="best_header">Our best</div>
                         <div className="best_items">
-                            <div className="item">
-                                <img src="https://www.zastavki.com//pictures/640x480/2017/Food_Coffee_beans_close-up_117979_29.jpg" alt="" />
-                                <div className="title">Solimo Coffee Beans 2 kg</div>
-                                <div className="price">10.73$</div>
+                            <div className="wrapper">
+                                <div className="item">
+                                    <img src="https://www.zastavki.com//pictures/640x480/2017/Food_Coffee_beans_close-up_117979_29.jpg" alt="" />
+                                    <div className="title">Solimo Coffee Beans 2 kg</div>
+                                    <div className="price">10.73$</div>
+                                </div>
                             </div>
-                            <div className="item">
-                                <img src="https://content1.rozetka.com.ua/goods/images/big/97250691.jpg" alt="" />
-                                <div className="title">Solimo Coffee Beans 2 kg</div>
-                                <div className="price">10.73$</div>
+                            <div className="wrapper">
+                                <div className="item">
+                                    <img src="https://content1.rozetka.com.ua/goods/images/big/97250691.jpg" alt="" />
+                                    <div className="title">Solimo Coffee Beans 2 kg</div>
+                                    <div className="price">10.73$</div>
+                                </div>
                             </div>
-                            <div className="item">
-                                <img src="https://coffeefan.info/wp-content/uploads/2019/01/sorta-i-obzharka-zeren-kofe-768x768.jpg" alt="" />
-                                <div className="title">Solimo Coffee Beans 2 kg</div>
-                                <div className="price">10.73$</div>
+                            <div className="wrapper">
+                                <div className="item">
+                                    <img src="https://coffeefan.info/wp-content/uploads/2019/01/sorta-i-obzharka-zeren-kofe-768x768.jpg" alt="" />
+                                    <div className="title">Solimo Coffee Beans 2 kg</div>
+                                    <div className="price">10.73$</div>
+                                </div>
                             </div>
 
                         </div>
                 </section>
+                
                 <Footer/>
             </>
         )
