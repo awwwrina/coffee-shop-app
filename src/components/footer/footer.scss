@@ -1,0 +1,18 @@
+@import '../../mixins/dividers.scss';
+
+.footer {
+    height: 150px;
+}
+
+.bean {
+    margin-top: 20px;
+    @include divider;
+    &_black {
+        &:before,
+        &:after {
+            background-color: #000000;
+            vertical-align: 16px;
+            box-shadow: none;
+        }
+    }
+}

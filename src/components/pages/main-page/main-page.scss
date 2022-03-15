@@ -1,0 +1,100 @@
+
+
+.promo {
+    background: url('../../../image/main-background.jpg') center center/cover no-repeat;
+    padding-top: 52px;
+    text-align: center;
+    color: #ffffff;
+    height: 760px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    &_header {
+        margin-top: 180px;
+        margin-bottom: 0;
+        font-weight: 700;
+        font-size: 40px;
+    }
+    &_subheader {
+        margin-top: 35px;
+        font-size: 24px;
+    }
+    &_btn {
+        width: 120px;
+        height: 30px;
+        background-color: transparent;
+        color: #ffffff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: background-color 0.5s, box-shadow 1s;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+        }
+
+    }
+}
+
+.about {
+    padding-top: 80px;
+    text-align: center;
+    height: 520px;
+    &_header {
+        font-weight: 400;
+        font-size: 24px;
+    }
+    &_descr {
+        width: 590px;
+        margin: 41px auto 0px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.best {
+    background: url('../../../image/paper-background.jpg') center center / cover no-repeat;
+    padding-top: 80px;
+    height: 495px;
+    &_header {
+        font-size: 24px;
+        text-align: center;
+    }
+    &_items {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 802px;
+        margin: 40px auto 0;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 220px;
+        height: 240px;
+        background: rgba(255, 255, 255, 0.65);
+        border-radius: 8px;
+        padding-bottom: 22px;
+        padding-right: 20px;
+        padding-left: 20px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .title {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .price {
+            margin-top: 10px;
+            text-align: right;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+}
+
