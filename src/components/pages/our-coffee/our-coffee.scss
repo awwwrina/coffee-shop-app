@@ -1,0 +1,105 @@
+.header {
+    padding-top: 52px;
+    height: 260px;
+    background: url('../../../image/our-coffee-background.jpg') center center / cover no-repeat;
+    text-align: center;
+    .title {
+        margin-top: 60px;
+        font-weight: 700;
+        font-size: 40px;
+        color: #ffffff;
+    }
+}
+
+.about-coffee {
+    height: 485px;
+    padding-top: 70px;
+    text-align: center;
+    .wrapper {
+        display: grid;
+        grid-template-columns: 272px 346px;
+        grid-template-rows: repeat(2, auto) 232px;
+        grid-column-gap: 80px;
+        justify-content: center;
+        .girl {
+            grid-row: 1 / 4;
+        }
+        .bean {
+            grid-column: 2 / 3;
+        }
+    }
+    &_title {
+        font-size: 24px;
+    }
+    &_descr {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4 ;
+        font-size: 14px;
+    }  
+}
+
+.divider {
+    height: 1px;
+    width: 240px;
+    background-color: #000000;
+    margin: 60px auto 0;
+}
+
+.coffee_cards {
+    margin-top: 60px;
+    .option {
+        display: flex;
+        width: 695px;
+        font-size: 14px;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+    .search {
+        &_label {
+            margin-right: 20px;
+        }
+        &_input  {
+            text-align: center;
+            width: 180px;
+            height: 30px;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            font-size: 12px;
+            outline: none;
+            border:none;
+        }
+    }
+    .filter {
+        display: flex;
+        width: 409px;
+        align-items: center;
+        .countries {
+            display: flex;
+            width: 235px;
+            justify-content: space-between;
+        }
+        &_country {
+            height: 30px;
+            width: 75px;
+            font-size: 12px;
+            padding-top: 7px;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            &:first-child {
+                border-radius: 4px 0px 0px 4px;
+            }
+            &:last-child {
+                border-radius: 0px 4px 4px 0px;
+            }
+        }
+        &_label {
+            display: inline-block;
+            margin-left: 83px;
+            margin-right: 35px;
+        }
+        
+    }
+}
+#Kenya {
+    margin: 0 5px 0;
+}

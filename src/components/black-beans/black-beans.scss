@@ -2,7 +2,7 @@
 
 .bean {
     margin-top: 20px;
-    @include divider;
+    @include two-dividers;
     &_black {
         &:before,
         &:after {
