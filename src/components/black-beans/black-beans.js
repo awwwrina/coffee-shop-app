@@ -1,6 +1,6 @@
 import ThreeBeansBlack from '../../logo/three-beans-logo.svg';
 
-import './black-beans.js'
+import './black-beans.scss'
 
 const BlackBeans = () => {
     return(
