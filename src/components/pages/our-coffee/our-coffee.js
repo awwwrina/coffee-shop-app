@@ -1,7 +1,11 @@
 import Navigation from '../../navigation/navigation';
+import Card from '../../mini-card-item/mini-card-item';
 import BlackBeans from '../../black-beans/black-beans';
 import Footer from '../../footer/footer';
+
 import Girl from '../../../image/girl.jpg'
+
+
 import './our-coffee.scss';
 
 const OurCoffee = () => {
@@ -41,7 +45,7 @@ const OurCoffee = () => {
                 <div className="option">
                     <div className="search">
                         <label className="search_label">Looking for</label>
-                        <input className="search_input" type="text" placeholder="start typing here..." name="" id="" value=""/>
+                        <input className="search_input" type="text" placeholder="start typing here..." name="" id=""/>
                     </div>
 
                     <div className="filter">
@@ -53,6 +57,15 @@ const OurCoffee = () => {
                             <div className="filter_country">Columbia</div>
                         </div>
                     </div>
+                </div>
+
+                <div className="container">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
                 </div>
             </section >
 

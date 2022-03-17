@@ -85,6 +85,11 @@
             font-size: 12px;
             padding-top: 7px;
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: box-shadow 0.5s;
+            &:hover {
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+            }
             &:first-child {
                 border-radius: 4px 0px 0px 4px;
             }
@@ -99,7 +104,15 @@
         }
         
     }
-}
-#Kenya {
-    margin: 0 5px 0;
+    .container {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, 220px);
+        grid-template-rows: repeat(2, 260px);
+        grid-auto-rows: auto;
+        grid-auto-flow: row;
+        gap: 60px 70px;
+        justify-content: center;
+    
+    }
 }
