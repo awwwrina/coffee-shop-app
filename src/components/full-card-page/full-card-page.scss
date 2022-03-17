@@ -1,41 +1,42 @@
-.item {
+.full-card {
     height: 455px;
     padding-top: 70px;
     span {
         font-weight: 700;
         font-size: 14px;
     }
-    &_img {
-        max-height: 100%;
-        max-width: 100%;
-        grid-row: 1 / 6;
-    }
-    &_title {
-        margin: 0;
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-        align-self: end;
-        text-align: center;
-    }
-    &_price {
-        font-size: 28px;
+    
+    .item {
+        display: grid;
+        grid-template-rows: auto 30px  22px minmax(110px, auto) auto ;
+        grid-template-columns: 392px 420px;
+        grid-gap: 20px 55px;
+        justify-content: center;
+        align-items: center;
+        height: 355px;
+        &_img {
+            max-height: 100%;
+            max-width: 100%;
+            grid-row: 1 / 6;
+        }
+        &_title {
+            margin: 0;
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            align-self: end;
+            text-align: center;
+        }
+        &_price {
+            font-size: 28px;
+        }
+        .bean {
+            margin: 0;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            text-align: center;
+        }
     }
 }
 
-.wrapper {
-    display: grid;
-    grid-template-rows: auto 30px  22px minmax(110px, auto) auto ;
-    grid-template-columns: 392px 420px;
-    grid-gap: 20px 55px;
-    justify-content: center;
 
-    align-items: center;
-    height: 355px;
-    .bean {
-        margin: 0;
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-        text-align: center;
-    }
-}
 

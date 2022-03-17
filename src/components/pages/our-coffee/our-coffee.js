@@ -18,10 +18,10 @@ const OurCoffee = () => {
            
            <section className="about-coffee">
                <div className="wrapper">
-                    <img className="girl" src={Girl} alt="" />
-                    <h2 className="about-coffee_title">About our beans</h2>
+                    <img src={Girl} alt="" />
+                    <h2 className="title">About our beans</h2>
                     <BlackBeans />
-                    <p className="about-coffee_descr">
+                    <p className="descr">
                         Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                         <br /><br />
                         Afraid at highly months do things on at. Situation recommend objection do intention

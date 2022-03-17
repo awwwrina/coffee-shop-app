@@ -12,8 +12,8 @@ const FullCardPage = () => {
                 <h1 className="title">Our Coffee</h1>
             </section>
 
-            <section className="item">
-                <div className="wrapper">
+            <section className="full-card">
+                <div className="item">
                     <img className="item_img" src="https://magiccoffee.in.ua/img/articles/stock-photo-the-chosen-one-30714029.jpg" alt="" />
                     <h2 className="item_title">About it</h2>
                     <BlackBeans />

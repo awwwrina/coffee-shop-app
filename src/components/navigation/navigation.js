@@ -15,9 +15,9 @@ const Navigation = ({color='black'}) => {
 				<li>
 					<Link to="/pleasure">For your pleasure</Link>
 				</li>
-				<li>
+{/* 				<li>
 					<Link to="/full-card-page">Full Card</Link>
-				</li>
+				</li> */}
 			</ul>
 		</nav>
 	);
