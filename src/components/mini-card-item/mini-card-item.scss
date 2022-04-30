@@ -16,7 +16,7 @@
         }
         .item {
             display: grid;
-            grid-template-columns: auto minmax(auto, 47px);
+            grid-template-columns: auto minmax(auto, 70px);
             grid-template-rows: 130px repeat(3, 15px);
             grid-row-gap: 14px;
             justify-items: center;
@@ -36,11 +36,13 @@
             &_country {
                 grid-column: 2 / 3;
                 grid-row: 3 / 4;
+                justify-self: end;
             }
             &_price {
                 grid-column: 2 / 3;
                 grid-row: 4 / 5;
                 font-weight: 700;
+                justify-self: end;
             }
         }
     }

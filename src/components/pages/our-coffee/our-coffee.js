@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+
+import useCoffeeService from '../../../services/CoffeeService';
+
 import Navigation from '../../navigation/navigation';
 import Card from '../../mini-card-item/mini-card-item';
 import BlackBeans from '../../black-beans/black-beans';
@@ -9,6 +13,48 @@ import Girl from '../../../image/girl.jpg'
 import './our-coffee.scss';
 
 const OurCoffee = () => {
+
+    const [coffeeList, setCoffeeList] = useState([]);
+    const [page, setPage] = useState(1);
+    const [dataEnded, setDataEnded] = useState(false);
+
+    const {getAllProducts} = useCoffeeService();
+
+    useEffect(() => {
+        onRequest(page)
+    }, []);
+
+
+    const onDataLoaded = (newCoffeeList) => {
+        let ended = false;
+        if(newCoffeeList.length < 6) {
+            ended = true
+        }
+        setCoffeeList(coffeeList => [ ...coffeeList, ...newCoffeeList]);
+        setPage(page => page + 1);
+        setDataEnded(dataEnded => ended);
+    }
+
+    const onRequest = (page) => {
+        getAllProducts(page)
+            .then(onDataLoaded)
+    }
+
+    function renderItemList(arr) {
+        const cards = arr.map(item => {
+            return(
+                <Card {...item} key={item.name}/>
+            )
+        })
+
+        return(
+            <div className="container">
+                {cards}
+            </div>
+        )
+    }
+
+    const items = renderItemList(coffeeList);
     return (
         <>  
             <section className="header">
@@ -59,16 +105,15 @@ const OurCoffee = () => {
                     </div>
                 </div>
 
-                <div className="container">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </div>
+                
+                {items}
+                
+                <button 
+                    className='btn btn_dark'
+                    style={{'display': dataEnded ? 'none' : 'block'}}
+                    onClick={() => onRequest(page)}
+                    >More</button>
             </section >
-
             <Footer/>
         </>
     )

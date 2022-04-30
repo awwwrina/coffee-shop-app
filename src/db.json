@@ -1,0 +1,189 @@
+
+		{
+			"_page=1": [
+				{
+				"img": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_960_720.jpg",
+				"name": "Finca El Arcangel",
+				"weight" : "1kg",
+				"country": "Brazil",
+				"price": "26"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2021/09/17/12/12/coffee-6632524_960_720.jpg",
+				"name": "Fazenda Furnas", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "40"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2019/10/31/07/14/coffee-4591159_960_720.jpg",
+				"name": "Finca Chico", 
+				"weight": "2kg",
+				"country": "Kenya",
+				"price": "61"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_960_720.jpg",
+				"name": "Decaffinated Finca La Bolsa", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "32"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_960_720.jpg",
+				"name": "Finca El Arcangel",
+				"weight" : "1kg",
+				"country": "Brazil",
+				"price": "26"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2021/09/17/12/12/coffee-6632524_960_720.jpg",
+				"name": "Fazenda Furnas", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "40"
+				}
+			],
+			
+			
+			"_page=2": [
+				{
+				"img": "https://cdn.pixabay.com/photo/2020/06/30/07/50/coffee-5355428_960_720.jpg",
+				"name": "Finca Malacara A", 
+				"weight": "1kg",
+				"country": "Kenya",
+				"price": "48"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2019/12/02/18/44/coffee-beans-4668463_960_720.jpg",
+				"name": "Tessema Edima",
+				"weight" : "1kg",
+				"country": "Columbia",
+				"price": "66"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2015/03/15/15/18/coffee-674563_960_720.jpg",
+				"name": "Finca Santa Catalina", 
+				"weight": "1kg",
+				"country": "Kenya",
+				"price": "60"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2019/10/31/07/14/coffee-4591159_960_720.jpg",
+				"name": "Finca Chico", 
+				"weight": "2kg",
+				"country": "Kenya",
+				"price": "61"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2020/06/30/07/50/coffee-5355428_960_720.jpg",
+				"name": "Finca Malacara A", 
+				"weight": "1kg",
+				"country": "Kenya",
+				"price": "48"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2019/12/02/18/44/coffee-beans-4668463_960_720.jpg",
+				"name": "Tessema Edima",
+				"weight" : "1kg",
+				"country": "Columbia",
+				"price": "66"
+				}
+			], 
+			
+			"_page=3": [
+				{
+				"img": "https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_960_720.jpg",
+				"name": "Decaffinated Finca La Bolsa", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "32"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_960_720.jpg",
+				"name": "Finca El Arcangel",
+				"weight" : "1kg",
+				"country": "Brazil",
+				"price": "26"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2021/09/17/12/12/coffee-6632524_960_720.jpg",
+				"name": "Fazenda Furnas", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "40"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2019/10/31/07/14/coffee-4591159_960_720.jpg",
+				"name": "Finca Chico", 
+				"weight": "2kg",
+				"country": "Kenya",
+				"price": "61"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2020/06/30/07/50/coffee-5355428_960_720.jpg",
+				"name": "Finca Malacara A", 
+				"weight": "1kg",
+				"country": "Kenya",
+				"price": "48"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2019/12/02/18/44/coffee-beans-4668463_960_720.jpg",
+				"name": "Tessema Edima",
+				"weight" : "1kg",
+				"country": "Columbia",
+				"price": "66"
+				}
+			],
+			
+			"_page=4" : [
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_960_720.jpg",
+				"name": "Decaffinated Finca La Bolsa", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "32"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_960_720.jpg",
+				"name": "Finca El Arcangel",
+				"weight" : "1kg",
+				"country": "Brazil",
+				"price": "26"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2021/09/17/12/12/coffee-6632524_960_720.jpg",
+				"name": "Fazenda Furnas", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "40"
+				},
+				{
+				"img": "https://cdn.pixabay.com/photo/2015/03/15/15/18/coffee-674563_960_720.jpg",
+				"name": "Finca Santa Catalina", 
+				"weight": "1kg",
+				"country": "Kenya",
+				"price": "60"
+				},
+			
+				{
+				"img": "https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_960_720.jpg",
+				"name": "Decaffinated Finca La Bolsa", 
+				"weight": "1kg",
+				"country": "Columbia",
+				"price": "32"
+				}
+			]
+		}
