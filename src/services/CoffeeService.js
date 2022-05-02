@@ -2,13 +2,18 @@ import { useHttp } from "../hooks/http.hook";
 
 
 const useCoffeeService = () => {
-    const {request} = useHttp();
+    const {request, loading} = useHttp();
     const url = "http://localhost:3001/";
-    const basePage = 1;
+    const baseStart = 0;
 
-    const getAllProducts = async (page = basePage) => {
-        const res = await request(`${url}_page=${page}`);
+    const getAllProducts = async (start = baseStart) => {
+        const res = await request(`${url}product?_start=${start}&_end=${start + 6}`);
         return res.map(_transformData)
+    }
+    const getProduct = async(id) => {
+        const res = await request(`${url}product/${id}`)
+        return res;
+
     }
 
     const _transformData = (product) => {
@@ -17,6 +22,7 @@ const useCoffeeService = () => {
             slicedName += '...'
         }
         return {
+            id: product.id,
             name: slicedName,
             img: product.img,
             country: product.country,
@@ -24,7 +30,7 @@ const useCoffeeService = () => {
 
         }
     }
-    return {getAllProducts}
+    return {loading, getAllProducts, getProduct}
 }
 
 export default useCoffeeService;

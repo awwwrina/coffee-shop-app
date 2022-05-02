@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 
 import useCoffeeService from '../../../services/CoffeeService';
+import { Link } from 'react-router-dom';
+
 
 import Navigation from '../../navigation/navigation';
 import Card from '../../mini-card-item/mini-card-item';
 import BlackBeans from '../../black-beans/black-beans';
 import Footer from '../../footer/footer';
+
+import Spinner from '../../spinner/Spinner';
 
 import Girl from '../../../image/girl.jpg'
 
@@ -15,13 +19,13 @@ import './our-coffee.scss';
 const OurCoffee = () => {
 
     const [coffeeList, setCoffeeList] = useState([]);
-    const [page, setPage] = useState(1);
+    const [start, setStart] = useState(0);
     const [dataEnded, setDataEnded] = useState(false);
 
-    const {getAllProducts} = useCoffeeService();
+    const {getAllProducts, loading} = useCoffeeService();
 
     useEffect(() => {
-        onRequest(page)
+        onRequest(start)
     }, []);
 
 
@@ -31,19 +35,24 @@ const OurCoffee = () => {
             ended = true
         }
         setCoffeeList(coffeeList => [ ...coffeeList, ...newCoffeeList]);
-        setPage(page => page + 1);
+        setStart(start => start + 6);
         setDataEnded(dataEnded => ended);
     }
 
-    const onRequest = (page) => {
-        getAllProducts(page)
+    const onRequest = (start) => {
+        getAllProducts(start)
             .then(onDataLoaded)
     }
 
     function renderItemList(arr) {
         const cards = arr.map(item => {
             return(
-                <Card {...item} key={item.name}/>
+                <Link 
+                    style={{textDecoration: 'none', color: 'black'}}
+                    to={`/our-coffee/${item.id}`}>
+                    <Card {...item} key={item.id}/>
+                </Link>
+                
             )
         })
 
@@ -104,14 +113,14 @@ const OurCoffee = () => {
                         </div>
                     </div>
                 </div>
-
+                
                 
                 {items}
                 
                 <button 
                     className='btn btn_dark'
                     style={{'display': dataEnded ? 'none' : 'block'}}
-                    onClick={() => onRequest(page)}
+                    onClick={() => onRequest(start)}
                     >More</button>
             </section >
             <Footer/>

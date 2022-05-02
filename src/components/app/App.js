@@ -1,6 +1,6 @@
 //import { Component } from 'react';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from '../pages/main-page/main-page';
 import OurCoffee from '../pages/our-coffee/our-coffee';
 import FullCardPage from '../full-card-page/full-card-page';
@@ -10,14 +10,16 @@ import './App.css';
 
 const App = () => {
 		return (
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<MainPage />} />
-					<Route path="/our-coffee" element={<OurCoffee />} />
-					<Route path="/pleasure" element={<Pleasure />} />
-					<Route path="/full-card-page" element={<FullCardPage />} />
-				</Routes>
-			</BrowserRouter>
+			<Router>
+				<main>
+					<Routes>
+						<Route path="/" element={<MainPage />} />
+						<Route path="/our-coffee" element={<OurCoffee />} />
+						<Route path="/our-coffee/:productId" element={<FullCardPage />} />
+						<Route path="/pleasure" element={<Pleasure />} />
+					</Routes>
+				</main>
+			</Router>
 		)
 }
 

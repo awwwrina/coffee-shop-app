@@ -1,5 +1,4 @@
 .full-card {
-    height: 455px;
     padding-top: 70px;
     span {
         font-weight: 700;
@@ -8,12 +7,12 @@
     
     .item {
         display: grid;
-        grid-template-rows: auto 30px  22px minmax(110px, auto) auto ;
+        grid-template-rows: auto 30px  22px minmax(110px, auto) auto auto;
         grid-template-columns: 392px 420px;
         grid-gap: 20px 55px;
         justify-content: center;
         align-items: center;
-        height: 355px;
+        //height: 355px;
         &_img {
             max-height: 100%;
             max-width: 100%;
@@ -26,7 +25,11 @@
             align-self: end;
             text-align: center;
         }
+        &_weight {
+            font-size: 24px;
+        }
         &_price {
+            grid-column: 2 / 3;
             font-size: 28px;
         }
         .bean {
