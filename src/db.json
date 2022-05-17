@@ -2,7 +2,7 @@
 {
 	"product": [
 		{
-		"id": 1,
+		"id": "1",
 		"img": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_960_720.jpg",
 		"name": "Finca El Arcangel",
 		"description": "100% Arabica.Roasted To Order. A rich, super sweet coffee, well balanced with complex flavours. Great served morning, noon and night. Glacé cherry, funky acidity, syrupy body, light roast.",
@@ -12,7 +12,7 @@
 		},
 	
 		{
-		"id": 2,
+		"id": "2",
 		"img": "https://cdn.pixabay.com/photo/2021/09/17/12/12/coffee-6632524_960_720.jpg",
 		"name": "Fazenda Furnas", 
 		"description": "Roasted To Order. Cocoa, dates, low acidity, full body, dark roast",

@@ -1,51 +1,35 @@
-import { useEffect, useState } from 'react';
-
-import useCoffeeService from '../../../services/CoffeeService';
+import { useEffect, useState, } from 'react';
 import { Link } from 'react-router-dom';
-
-
 import Navigation from '../../navigation/navigation';
 import Card from '../../mini-card-item/mini-card-item';
 import BlackBeans from '../../black-beans/black-beans';
 import Footer from '../../footer/footer';
-
 import Spinner from '../../spinner/Spinner';
+import Error from '../../error/Error';
 
 import Girl from '../../../image/girl.jpg'
 
 
 import './our-coffee.scss';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchBeans } from './coffeeSlice';
 
 const OurCoffee = () => {
+    const beansLoadingStatus = useSelector(state => state.beans.beansLoadingStatus);
+    const showBtn = useSelector(state => state.beans.showBtn);
+    const dispatch = useDispatch();
 
-    const [coffeeList, setCoffeeList] = useState([]);
     const [start, setStart] = useState(0);
-    const [dataEnded, setDataEnded] = useState(false);
 
-    const {getAllProducts, loading} = useCoffeeService();
-
+    const beans = useSelector(state => state.beans.beans)
+ 
     useEffect(() => {
-        onRequest(start)
-    }, []);
-
-
-    const onDataLoaded = (newCoffeeList) => {
-        let ended = false;
-        if(newCoffeeList.length < 6) {
-            ended = true
-        }
-        setCoffeeList(coffeeList => [ ...coffeeList, ...newCoffeeList]);
-        setStart(start => start + 6);
-        setDataEnded(dataEnded => ended);
-    }
-
-    const onRequest = (start) => {
-        getAllProducts(start)
-            .then(onDataLoaded)
-    }
+        dispatch(fetchBeans(start));
+    }, [start]);
 
     function renderItemList(arr) {
-        const cards = arr.map(item => {
+        const items = arr.map(item => {
             return(
                 <Link 
                     style={{textDecoration: 'none', color: 'black'}}
@@ -58,21 +42,21 @@ const OurCoffee = () => {
 
         return(
             <div className="container">
-                {cards}
+                {items}
             </div>
         )
     }
-
-    const items = renderItemList(coffeeList);
+    
+    const cards = renderItemList(beans);
     return (
-        <>  
+        <>
             <section className="header">
                 <Navigation color='white'/> 
                 <h1 className="title">Our Coffee</h1>
-            </section>
+             </section>
            
-           <section className="about-coffee">
-               <div className="wrapper">
+            <section className="about-coffee">
+                <div className="wrapper">
                     <img src={Girl} alt="" />
                     <h2 className="title">About our beans</h2>
                     <BlackBeans />
@@ -91,8 +75,8 @@ const OurCoffee = () => {
                         <br />
                         is song that held help face.
                     </p>
-               </div>
-            </section>
+                </div>
+             </section>
 
             <div className="divider"></div>
 
@@ -105,26 +89,25 @@ const OurCoffee = () => {
 
                     <div className="filter">
                         <div className="filter_label">Or filter</div>
-                        
+                    
                         <div className="countries">
-                            <div className="filter_country">Brazil</div>
-                            <div className="filter_country">Kenya</div>
-                            <div className="filter_country">Columbia</div>
+                        <button className="filter_country">All</button>
+                            <button className="filter_country">Brazil</button>
+                            <button className="filter_country">Kenya</button>
+                            <button className="filter_country">Columbia</button>
                         </div>
                     </div>
                 </div>
-                
-                
-                {items}
-                
-                <button 
-                    className='btn btn_dark'
-                    style={{'display': dataEnded ? 'none' : 'block'}}
-                    onClick={() => onRequest(start)}
-                    >More</button>
+                    {beans.length && cards}
+                    {beansLoadingStatus === "loading" && <Spinner/>}
+                    {beansLoadingStatus === "error" && <Error/>}
+                    {showBtn && beans.length && <button 
+                        className='btn btn_dark'
+                        onClick={() => setStart((start) => start + 6)}
+                        >More</button> }
             </section >
             <Footer/>
-        </>
+        </>   
     )
 }
 

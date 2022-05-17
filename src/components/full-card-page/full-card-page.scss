@@ -1,13 +1,19 @@
 .full-card {
+    
     padding-top: 70px;
     span {
         font-weight: 700;
         font-size: 14px;
     }
+    &_back {
+        display: inline;
+        position: relative;
+        top: -6px;
+    }
     
     .item {
         display: grid;
-        grid-template-rows: auto 30px  22px minmax(110px, auto) auto auto;
+        grid-template-rows: auto 30px  22px minmax(110px, auto) auto auto auto;
         grid-template-columns: 392px 420px;
         grid-gap: 20px 55px;
         justify-content: center;
@@ -32,6 +38,11 @@
             grid-column: 2 / 3;
             font-size: 28px;
         }
+        &_add {
+            grid-column: 2 / 3;
+            width: 150px;
+        }
+
         .bean {
             margin: 0;
             grid-column: 2 / 3;

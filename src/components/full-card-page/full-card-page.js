@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import useCoffeeService from "../../services/CoffeeService";
 
@@ -7,7 +8,7 @@ import Spinner from "../spinner/Spinner";
 import Navigation from "../navigation/navigation";
 import BlackBeans from "../black-beans/black-beans";
 import Footer from "../footer/footer";
-
+import Chevron from '../../icons/Chevron.js'
 import './full-card-page.scss';
 
 const FullCardPage = () => {
@@ -51,6 +52,12 @@ const View = ({product}) => {
     const {name, country, price, img, description, weight} = product;
     return(
         <section className="full-card">
+            <Link
+                style={{textDecoration: 'none', color: 'black', marginLeft: '150px'}}
+                to="/our-coffee">
+                    <Chevron/>     
+                    <div className="full-card_back">Back to List</div>        
+            </Link>
             <div className="item">
                 <img className="item_img" src={img} alt={name} />
                 <h2 className="item_title"> {name}</h2>
@@ -73,7 +80,12 @@ const View = ({product}) => {
                     <span>Price: </span> 
                     {price}$
                 </div>
+
+                <button className="btn item_add">Add to cart</button>
+
             </div>
+
+            
         </section>
     )
 }

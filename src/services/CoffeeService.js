@@ -27,7 +27,6 @@ const useCoffeeService = () => {
             img: product.img,
             country: product.country,
             price: product.price
-
         }
     }
     return {loading, getAllProducts, getProduct}

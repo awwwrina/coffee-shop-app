@@ -29,20 +29,25 @@ const MainPage = () => {
                 <div className="about_header">About Us</div>
                 <BlackBeans/>
                 <p className="about_descr">
-                    Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
-                    Afraid at highly months do things on at. Situation recommend objection do intention so questions. As greatly removed calling pleased improve an. Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song that held help face.
-                    <br /><br />
-                    Now residence dashwoods she excellent you. Shade being under his bed her, Much read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant horrible but confined day end marriage. Eagerness furniture set preserved far recommend. Did even but nor are most gave hope. Secure active living depend son repair day ladies now.    
+                    Our mission is to recommend what really matters. Each year, we independently test and review thousands of products to help you find just what you need. Our goal is to save you time and eliminate the stress of shopping, whether you’re looking for everyday gear or gifts for loved ones.  
+                    <br/> <br/>
+                    These are the same things we choose for ourselves and recommend to our family and friends. If we recommend that you spend your hard-earned money on something, we take it as seriously as if our own money were on the line.
                 </p>
             </section>
 
-            <section className="best">
+            {/* <section className="best">
                     <div className="best_header">Our best</div>
                     <div className="coffee_cards ">
                         <Card />
                         <Card />
                         <Card />
                     </div>
+            </section> */}
+
+            <section className="blends">
+                <p className="blends_header">Discover our most popular blends</p>
+                <p className="blends_subheader">Treat your friends & family to freshly roasted coffee from around the globe</p>
+                <button className="btn btn_light">Shop blends</button>
             </section>
             
             <Footer/>

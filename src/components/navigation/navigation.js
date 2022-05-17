@@ -1,6 +1,6 @@
 import './navigation.scss';
 
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = ({color='black'}) => {
 	return (
@@ -21,9 +21,11 @@ const Navigation = ({color='black'}) => {
 						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}
 						to="/pleasure">For your pleasure</NavLink>
 				</li>
-{/* 				<li>
-					<Link to="/full-card-page">Full Card</Link>
-				</li> */}
+				<li>
+					<NavLink 
+						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}
+						to="/contact-us">Contact Us</NavLink>
+				</li>
 			</ul>
 		</nav>
 	);
