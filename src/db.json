@@ -226,32 +226,22 @@
 		{
 		  "id":"all",
 		  "name": "all",
-		  "label": "Все",
-		  "className": "btn-outline-dark"
+		  "label": "All"
 		},
 		{
-		  "id":"fire",
-		  "name": "fire",
-		  "label": "Огонь",
-		  "className": "btn-danger"
+		  "id":"Brazil",
+		  "name": "Brazil",
+		  "label": "Brazil"
 		},
 		{
-		  "id":"water",
-		  "name": "water",
-		  "label": "Вода",
-		  "className": "btn-primary"
+		  "id":"Kenya",
+		  "name": "Kenya",
+		  "label": "Kenya"
 		},
 		{
-		  "id":"",
-		  "name": "wind",
-		  "label": "Ветер",
-		  "className": "btn-success"
-		},
-		{
-		  "id":"earth",
-		  "name": "earth",
-		  "label": "Земля",
-		  "className": "btn-secondary"
+		  "id":"Colombia",
+		  "name": "Colombia",
+		  "label": "Colombia"
 		}
 	  ]
 }
