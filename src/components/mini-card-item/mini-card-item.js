@@ -2,7 +2,7 @@ import './mini-card-item.scss';
 
 const Card = ({img, name, country, price}) => {
     let slicedName =  name.slice(0, 20);
-    if(slicedName.length < name.length) {
+    if (slicedName.length < name.length) {
         slicedName += '...'
     }
     return (

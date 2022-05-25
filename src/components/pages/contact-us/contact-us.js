@@ -10,7 +10,7 @@ import './contact-us.scss';
 const ContactUs = () => {
     return(
         <>
-            <section className="header header_contacts">
+            <section className="header header__contacts">
                 <Navigation color='white'/> 
                 <h1 className="title">Contact us</h1>
             </section>
@@ -39,7 +39,7 @@ const ContactUs = () => {
                                     .min(2, 'Must be longer than 2 characters'),
                             email: Yup.string()
                                     .required('Required field')
-                                    .email('Incorrect email address'),
+                                    .email('Invalid email address'),
                             text: Yup.string()
                                     .required('Required field')
                         })}
@@ -47,10 +47,10 @@ const ContactUs = () => {
                     
                         <Form className="contacts__form" >
                             <div required className="contacts__input contacts__input_name">
+                                <label htmlFor="name">Name</label>
                                 <Field 
                                     name="name" 
                                     type="text"
-                                    placeholder="Name"
                                     autoComplete="off"/>
                             </div>
                             <ErrorMessage 
@@ -58,21 +58,20 @@ const ContactUs = () => {
                                 className="contacts__error contacts__error_name"
                                 component="div"/>
                             <div required className="contacts__input contacts__input_email">
+                                <label htmlFor="email">Email</label>
                                 <Field
                                     name="email" 
                                     type="email"
-                                    placeholder="Email"
                                     autoComplete="off"/>
                             </div>
                             <ErrorMessage 
                                 name="email" 
                                 className="contacts__error contacts__error_email"
                                 component="div"/>
-                            <div className="contacts__textarea">
+                            <div className="contacts__textarea contacts__input_textarea">
+                                <label htmlFor="text">Message</label>
                                 <Field 
                                     name="text" 
-                                    id="text" 
-                                    placeholder="Message"
                                     as="textarea"/>
                             </div>
                             <ErrorMessage 
@@ -95,7 +94,7 @@ const ContactUs = () => {
                     </div>
                     <div className="email">
                         <h2 className="email__header">Email:</h2>
-                        <a href="mailto:contactus@aromacafe.com">contactus@aromacafe.com</a>
+                        <a href="mailto:contactus@acr.com">contactus@acr.com</a>
                     </div>
                     <div className="address">
                         <h2 className="address__header">Address:</h2>

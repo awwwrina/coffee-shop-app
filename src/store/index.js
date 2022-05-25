@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import beans from '../components/pages/our-coffee/coffeeSlice';
+import beans from '../components/pages/coffeeBeans/coffeeBeansSlice';
 
 const stringMiddleware = () => (next) => (action) => {
     if (typeof action === 'string') {

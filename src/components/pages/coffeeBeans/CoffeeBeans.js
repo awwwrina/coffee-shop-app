@@ -10,12 +10,12 @@ import Error from '../../error/Error';
 import Girl from '../../../image/girl.jpg'
 
 
-import './our-coffee.scss';
+import './coffeeBeans.scss';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchBeans } from './coffeeSlice';
+import { fetchBeans } from './coffeeBeansSlice';
 
-const OurCoffee = () => {
+const CoffeeBlends = () => {
     const beansLoadingStatus = useSelector(state => state.beans.beansLoadingStatus);
     const showBtn = useSelector(state => state.beans.showBtn);
     const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const OurCoffee = () => {
         <>
             <section className="header">
                 <Navigation color='white'/> 
-                <h1 className="title">Our Coffee</h1>
+                <h1 className="title">Coffee blends</h1>
              </section>
            
             <section className="about-coffee">
@@ -61,19 +61,9 @@ const OurCoffee = () => {
                     <h2 className="title">About our beans</h2>
                     <BlackBeans />
                     <p className="descr">
-                        Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
-                        <br /><br />
-                        Afraid at highly months do things on at. Situation recommend objection do intention
-                        <br />
-                        so questions. 
-                        <br />
-                        As greatly removed calling pleased improve an. 
-                        <br />
-                        Last ask him cold feel
-                        <br />
-                        met spot shy want. Children me laughing we prospect answered followed. At it went
-                        <br />
-                        is song that held help face.
+                    Explore rich, dark roasted coffee & expect strong, big-bodied brews with notes from smoky to sweet.
+                    <br /><br />
+                    From Brazil to Colombia, South American coffee is considered among the world’s finest. Explore the unique, distinctive tastes of this exceptional growing region. 
                     </p>
                 </div>
              </section>
@@ -111,4 +101,4 @@ const OurCoffee = () => {
     )
 }
 
-export default OurCoffee;
+export default CoffeeBlends;

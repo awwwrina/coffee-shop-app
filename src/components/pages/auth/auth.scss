@@ -1,0 +1,57 @@
+.header__auth {
+    background: url('../../../image/loginBG.jpg') center center / cover no-repeat;
+}
+
+.auth {
+    //width: 300px;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 70px;
+    &__form {
+        width: 300px;
+        display: grid;
+        grid-template-rows: auto 20px 20px auto 40px auto;
+        grid-template-columns: auto auto;
+    }
+    &__input {
+        &_email {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+        &_password {
+            grid-column: 1 / 3;
+            grid-row: 4 / 5;
+        }
+    }
+    &__btn {
+        width: 100%;
+        grid-column: 1 / 3;
+        grid-row: 6 / 7;
+    }
+    &__link {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        text-decoration: none;
+        font-size: 13px;
+        justify-self: end;
+
+    }
+    &__error {
+        &_email {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+        }
+        &_password {
+            grid-column: 1 / 3;
+            grid-row: 5 / 6;
+        }
+    }
+    .create {
+        margin-top: 30px;
+        text-align: center;
+        &__link {
+            text-decoration: none;
+        }
+    }
+
+}
