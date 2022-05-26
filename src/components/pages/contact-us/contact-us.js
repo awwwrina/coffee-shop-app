@@ -46,37 +46,40 @@ const ContactUs = () => {
                         onSubmit = {values => console.log(JSON.stringify(values, null, 2))}>
                     
                         <Form className="contacts__form" >
-                            <div required className="contacts__input contacts__input_name">
-                                <label htmlFor="name">Name</label>
+                            <div required className="input-container contacts__input_name">
+                                <label className="shift" htmlFor="name">Name</label>
                                 <Field 
+                                    className="input"
                                     name="name" 
                                     type="text"
                                     autoComplete="off"/>
                             </div>
                             <ErrorMessage 
                                 name="name" 
-                                className="contacts__error contacts__error_name"
+                                className="error__message contacts__error_name"
                                 component="div"/>
-                            <div required className="contacts__input contacts__input_email">
-                                <label htmlFor="email">Email</label>
+                            <div required className="input-container contacts__input_email">
+                                <label className="shift" htmlFor="email">Email</label>
                                 <Field
+                                    className="input"
                                     name="email" 
                                     type="email"
                                     autoComplete="off"/>
                             </div>
                             <ErrorMessage 
                                 name="email" 
-                                className="contacts__error contacts__error_email"
+                                className="error__message contacts__error_email"
                                 component="div"/>
-                            <div className="contacts__textarea contacts__input_textarea">
-                                <label htmlFor="text">Message</label>
+                            <div className="input-container contacts__textarea">
+                                <label className="shift" htmlFor="text">Message</label>
                                 <Field 
+                                className="input"
                                     name="text" 
                                     as="textarea"/>
                             </div>
                             <ErrorMessage 
                                 name="text"
-                                className="contacts__error contacts__error_textarea" 
+                                className="error__message contacts__error_textarea" 
                                 component="div"/>
                             <button className="contacts__btn btn">Send</button>
                         </Form>

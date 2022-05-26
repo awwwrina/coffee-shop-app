@@ -6,7 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 
-const Navigation = ({color='black'}) => {
+const Navigation = ({color='black', registration = false}) => {
 	return (
 		<nav className={`navigation ${color}`}>
 			<ul className='navbar navbar__element navbar__element_left'>
@@ -36,8 +36,10 @@ const Navigation = ({color='black'}) => {
 				<li>
 					<NavLink 
 						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}
-						to="/login"><FontAwesomeIcon icon={faUser} /></NavLink>	
+						to={registration ? '/registration' : '/login'}><FontAwesomeIcon icon={faUser} style={{textAlign:'left'}}/></NavLink>	
+
 				</li>
+				<li className="navbar navbar__divider">/</li>
 				<li>
 					<NavLink 
 						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}

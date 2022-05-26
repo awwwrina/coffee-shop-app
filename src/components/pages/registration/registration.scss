@@ -1,0 +1,61 @@
+.header__registration {
+    background: url('../../../image/registrationBG.jpg') center center / cover no-repeat;
+}
+
+.registration {
+    margin: 0 auto ;
+    width: 1280px;
+    text-align: center;
+    &__text {
+        width: 350px;
+        margin: 20px auto;
+    }
+    .title {
+        margin-top: 70px;
+    }
+    .form {
+        width: 350px;
+        display: grid;
+        grid-template-rows: repeat(5, (auto 40px)) auto;
+        &__name {
+            grid-row: 1 / 2;
+            &-error {
+                grid-row: 2 / 3; 
+            }
+        }
+        &__email {
+            grid-row: 3 / 4;
+            &-error {
+                grid-row: 4 / 5; 
+            }
+        }
+        &__password {
+            grid-row: 5 / 6;
+            &-error {
+                grid-row: 6 / 7; 
+            }
+        }
+        &__confirmation {
+            grid-row: 7 / 8;
+            &-error {
+                grid-row: 8 / 9; 
+            }
+        }
+        &__agreement {
+            grid-row: 9 / 10;
+            justify-self: center;
+            display: flex;
+            align-items: center;
+            &-error {
+                grid-row: 10 / 11; 
+            }
+            &-text {
+                margin: 0 6px;
+            }
+        }
+        &__btn {
+            grid-row: 11 / 12;
+            width: 100%;
+        }
+    }
+}
