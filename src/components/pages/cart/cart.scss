@@ -1,0 +1,28 @@
+.header__cart {
+    background: url('../../../image/cartBG.jpg') center center / cover no-repeat;
+}
+
+.cart {
+    width: 1280px;
+    margin: 0 auto;
+    padding-top: 70px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 3fr repeat(4, 1fr);
+    grid-template-rows: 30px auto;
+    row-gap: 20px;
+    &__items {
+        grid-column: 1 / 6;
+        display: grid;
+        grid-auto-rows: 140px;
+        row-gap: 20px;
+    }
+    &__subtotal {
+        grid-column: 4 / 6;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+}

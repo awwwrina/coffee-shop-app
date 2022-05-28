@@ -1,11 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+
 import Navigation  from '../../navigation/navigation';
 import BlackBeans from '../../black-beans/black-beans';
 import Footer from '../../footer/footer';
 
 import './auth.scss';
+
 const Auth = () => {
     return (
         <>

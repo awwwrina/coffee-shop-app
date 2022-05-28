@@ -1,0 +1,53 @@
+.wrapper-item {
+    display: grid;
+    grid-template-columns: 3fr repeat(4, 1fr);
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.5s;
+    &:hover {
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+    }
+    border-radius: 8px;
+    align-items: center;
+    .description {
+        display: flex;
+        cursor: pointer;
+        img { 
+            max-width: 150px;
+        }
+        .title {
+            margin-left: 20px;
+        }
+    }
+    .quantity {
+        display: flex;
+        margin: 0 auto;
+        &__modifier, &__input {
+            width: 50px;
+            height: 50px;
+
+        }
+        &__modifier {
+            border: none;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+            transition: box-shadow 0.5s;
+            &:hover {
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+            }
+            cursor: pointer;
+        }
+        &__input {
+            text-align: center;
+        }
+    }
+    .remove {
+        border: none;
+        background: none;
+        cursor: pointer;
+        width: 40px;
+        margin: 0 auto;
+        img {
+            width: 40px;
+        }
+    }
+}

@@ -7,6 +7,7 @@ import ContactUs from "../pages/contact-us/contact-us";
 import Auth from "../pages/auth/Auth";
 import Registration from "../pages/registration/Registration";
 import Terms from "../pages/terms/Terms";
+import Cart from "../pages/cart/Cart";
 
 import './App.css';
 
@@ -23,6 +24,7 @@ const App = () => {
 						<Route path="/login" element={<Auth/>} />
 						<Route path="/registration" element={<Registration/>} />
 						<Route path="/terms" element={<Terms />} />
+						<Route path="/cart" element={<Cart/>}/>
 					</Routes>
 				</main>
 			</Router>
