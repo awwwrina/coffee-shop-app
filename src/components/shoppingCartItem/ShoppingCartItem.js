@@ -13,17 +13,17 @@ const ShoppingCartItem = () => {
                     1 kg
                 </div>
                 <div className="quantity">
-                    <button className="quantity__modifier">
+                    <button className="quantity__modifier quantity__modifier_left">
                         &mdash;
                     </button>
                     <input readonly className="quantity__input" type="text" name="quantity" value="1" />
-                    <button className="quantity__modifier">
+                    <button className="quantity__modifier quantity__modifier_right">
                         &#43;
                     </button>
                 </div>
                 <div className="price">$3.00</div>
                 <button className="remove">
-                    <img src={bin} alt="" />
+                    <img src={bin} alt="removeItem" />
                 </button>
             </div>
 

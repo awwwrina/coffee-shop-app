@@ -29,8 +29,17 @@
         }
         &__modifier {
             border: none;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+            box-shadow: 5px  5px 15px rgba(0, 0, 0, 0.35);
             transition: box-shadow 0.5s;
+            background-color: #fff;
+            &_left {
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+            &_right {
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
             &:hover {
                 box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
             }

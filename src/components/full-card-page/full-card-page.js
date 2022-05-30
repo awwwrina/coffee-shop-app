@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-import useCoffeeService from "../../services/CoffeeService";
+import { fetchCurrentBlend } from "./fullCardSlice";
 
 import Spinner from "../spinner/Spinner";
+import Error from "../error/Error";
 import Navigation from "../navigation/navigation";
 import BlackBeans from "../black-beans/black-beans";
 import Footer from "../footer/footer";
@@ -14,24 +16,13 @@ import './full-card-page.scss';
 const FullCardPage = () => {
     const {productId} = useParams();
     
-    const [product, setProduct] = useState(null);
-
-    const {getProduct, loading} = useCoffeeService();
+    const loadingStatus = useSelector(state => state.currentBlend.loadingStatus);
+    const dispatch = useDispatch();
+    const blend = useSelector(state => state.currentBlend.currentBlend);
 
     useEffect(() => {
-        getProduct(productId)
-            .then(onDataLoaded)
+        dispatch(fetchCurrentBlend(productId));
     }, [productId])
-
-    const onDataLoaded = (product) => {
-        setProduct(product);
-    }
-
-    console.log(product);
-
-    const spinner = loading ? <Spinner/> : null;
-    const content = !(loading || !product) ?  <View product={product}/> : null;
-
 
     return (
         <>
@@ -39,8 +30,9 @@ const FullCardPage = () => {
                 <Navigation color='white'/> 
                 <h1 className="title">Our Coffee</h1>
             </section>
-            {spinner}
-            {content}
+            {loadingStatus === "loading" && <Spinner/>}
+            {loadingStatus === "error" && <Error/>}
+            <View blend={blend}/>
             <Footer />
         </>
     )
@@ -48,8 +40,8 @@ const FullCardPage = () => {
 
 }
 
-const View = ({product}) => {
-    const {name, country, price, img, description, weight} = product;
+const View = ({blend}) => {
+    const {name, country, price, img, description, weight} = blend;
     return(
         <section className="full-card">
             <Link

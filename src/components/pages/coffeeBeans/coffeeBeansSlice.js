@@ -11,8 +11,10 @@ export const fetchBeans = createAsyncThunk(
     'beans/fetchBeans',
     async (start = 0) => {
         const {request} = useHttp();
-        const url = 'http://localhost:3001/';
-        return await request(`${url}product?_start=${start}&_end=${start + 6}`);
+        // const url = 'http://localhost:3001/';
+        // return await request(`${url}product?_start=${start}&_end=${start + 6}`);
+        const url = 'http://localhost/';
+        return await request(`${url}api/coffee/product?limit=${start+6}&offset=${start}`)
 
     }
 );

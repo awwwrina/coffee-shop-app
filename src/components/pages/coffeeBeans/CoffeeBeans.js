@@ -48,6 +48,7 @@ const CoffeeBlends = () => {
     }
     
     const cards = renderItemList(beans);
+    
     return (
         <>
             <section className="header">
@@ -91,7 +92,8 @@ const CoffeeBlends = () => {
                     {beans.length && cards}
                     {beansLoadingStatus === "loading" && <Spinner/>}
                     {beansLoadingStatus === "error" && <Error/>}
-                    {showBtn && beans.length && <button 
+                    {showBtn && beans.length && 
+                    <button 
                         className='btn btn_dark'
                         onClick={() => setStart((start) => start + 6)}
                         >More</button> }
