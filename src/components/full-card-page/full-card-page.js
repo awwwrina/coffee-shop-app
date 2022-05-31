@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchCurrentBlend } from "./fullCardSlice";
+import { blendAdded } from "../pages/cart/cartSlice";
 
 import Spinner from "../spinner/Spinner";
 import Error from "../error/Error";
@@ -42,6 +43,16 @@ const FullCardPage = () => {
 
 const View = ({blend}) => {
     const {name, country, price, img, description, weight} = blend;
+    const itemCart = {
+        id: blend.id,
+        name: blend.name,
+        img: blend.img,
+        quantity: 1,
+        weight: blend.weight,
+        price : blend.price
+    }
+    console.log(itemCart);
+    const dispatch = useDispatch();
     return(
         <section className="full-card">
             <Link
@@ -66,14 +77,16 @@ const View = ({blend}) => {
                 </p>
                 <div className="item_weight">
                     <span>Weight: </span> 
-                    {weight}
+                    {weight} kg
                 </div>
                 <div className="item_price">
                     <span>Price: </span> 
                     {price}$
                 </div>
 
-                <button className="btn item_add">Add to cart</button>
+                <button 
+                    className="btn item_add"
+                    onClick={() => dispatch(blendAdded(itemCart))}>Add to cart</button>
 
             </div>
 

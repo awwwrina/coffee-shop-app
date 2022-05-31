@@ -1,10 +1,8 @@
-const initialState = {
-    products: [], 
-    productsLoadingStatus: 'idle',
-    terms: ''
+const cart = {
+    cart: []
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = cart, action) => {
     switch (action.type) {
         case 'PRODUCTS_FETCHING':
             return {

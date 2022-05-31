@@ -1,9 +1,29 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import Card from '../../mini-card-item/mini-card-item';
 import Navigation from '../../navigation/navigation';
 import ShoppingCartItem from '../../shoppingCartItem/ShoppingCartItem';
 
 import './cart.scss';
 
 const Cart = () => {
+    const blends = useSelector(state => state.cart.blends);
+
+    // let total = (blends.map(item => +item.price)).reduce(function(a, b) {
+    //     return a + b;
+    // });
+  
+
+
+    // console.log(total)
+
+    const [total, setTotal] = useState(0);
+    const qw = (price) => {
+        console.log(price);
+        setTotal(total=> total + price)
+    }
+
+
     return(
         <>
             <section className="header header__cart">
@@ -21,17 +41,14 @@ const Cart = () => {
                 
                 
                 <div className="cart__items">
-                    <ShoppingCartItem/>
-                    <ShoppingCartItem/>
-                    <ShoppingCartItem/>
-                    <ShoppingCartItem/>
+                    {blends.map(item => <ShoppingCartItem {...item} key={item.id} qw={qw}/>)}
                 </div>
 
                 <div className="cart__subtotal">
                     <div className="title">
                         Cart subtotal:
                     </div>
-                    <div className="sum">$33.00</div>
+                    <div className="sum">${total}.00</div>
                 </div>
             </section>
 
