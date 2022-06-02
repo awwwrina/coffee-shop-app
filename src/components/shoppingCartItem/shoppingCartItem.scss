@@ -12,9 +12,17 @@
     .description {
         display: flex;
         cursor: pointer;
-        img { 
-            max-width: 150px;
+        .img-wrapper {
+            width: 150px;
+            height: 100px;
+            img { 
+                width: 150px;
+                max-height: 100px;
+                justify-content: stretch;
+                align-content: stretch;
+            }
         }
+
         .title {
             margin-left: 20px;
         }

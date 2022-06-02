@@ -31,10 +31,10 @@ const CoffeeBlends = () => {
     function renderItemList(arr) {
         const items = arr.map(item => {
             return(
-                <Link 
+                <Link  key={item.id}
                     style={{textDecoration: 'none', color: 'black'}}
                     to={`/our-coffee/${item.id}`}>
-                    <Card {...item} key={item.id}/>
+                    <Card {...item}/>
                 </Link>
                 
             )

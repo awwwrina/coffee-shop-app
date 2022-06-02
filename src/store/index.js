@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import beans from '../components/pages/coffeeBeans/coffeeBeansSlice';
 import currentBlend from '../components/pages/fullCardPage/fullCardPageSlice';
-import cart from '../components/pages/cart/cartSlice';
+import cart from '../components/pages/cartPage/cartPageSlice';
 
 const stringMiddleware = () => (next) => (action) => {
     if (typeof action === 'string') {
@@ -29,7 +29,7 @@ const saveCart = () => {
         if (cart !== oldCart) {
             window.localStorage.setItem('cart', serialCart);
         }
-        oldCart = cart;
+        oldCart = serialCart;
     };
 };
 

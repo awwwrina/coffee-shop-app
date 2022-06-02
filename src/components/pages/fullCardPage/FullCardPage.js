@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchCurrentBlend } from "./fullCardPageSlice";
-import { blendAdded } from "../cart/cartSlice";
+import { blendAdded } from "../cartPage/cartPageSlice";
+
+import { SERVER_ADDRESS, SERVER_PORT } from "../../../config";
 
 import Spinner from "../../spinner/Spinner";
 import Error from "../../error/Error";
@@ -43,14 +45,15 @@ const FullCardPage = () => {
 }
 
 const View = ({blend}) => {
-    const {name, country, price, img, description, weight} = blend;
+    const {name, country, price, id, description, weight} = blend;
+    const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
     const itemCart = {
         id: blend.id,
         name: blend.name,
         img: blend.img,
         quantity: 1,
         weight: blend.weight,
-        price : blend.price
+        price : blend.price, 
     }
     const dispatch = useDispatch();
     return(
@@ -62,7 +65,7 @@ const View = ({blend}) => {
                     <div className="full-card_back">Back to List</div>        
             </Link>
             <div className="item">
-                <img className="item_img" src={img} alt={name} />
+                <img className="item_img" src={path} alt={name} />
                 <h2 className="item_title"> {name}</h2>
                 <BlackBeans />
                 <div className="item_country">

@@ -4,16 +4,10 @@ import Card from '../../miniCardItem/MiniCardItem';
 import Navigation from '../../navigation/Navigation';
 import ShoppingCartItem from '../../shoppingCartItem/ShoppingCartItem';
 
-import './cart.scss';
+import './cartPage.scss';
 
-const Cart = () => {
-    const blends = useSelector(state => state.cart.blends);
-
-    const [total, setTotal] = useState(0);
-    const qw = (price) => {
-        console.log(price);
-        setTotal(total => total + price)
-    }
+const CartPage = () => {
+    const cart = useSelector(state => state.cart.blends);
 
     return(
         <>
@@ -21,7 +15,25 @@ const Cart = () => {
                 <Navigation color='white'/>
                 <h1 className="title">Shopping cart</h1>
             </section>
+            {cart.length !== 0 && <Cart/>}
+            {cart.length == 0 && <EmptyCart/>}
 
+           
+
+            
+        </>
+    )
+}
+
+const Cart = () => {
+    const blends = useSelector(state => state.cart.blends);
+
+    const [total, setTotal] = useState(0);
+    const qw = (price) => {
+        setTotal(total => total + price)
+    }
+    return(
+        <>
             <section className="cart">
                 
                 <h2 className="cart__description">Description</h2>
@@ -42,11 +54,16 @@ const Cart = () => {
                     <div className="sum">${total}.00</div>
                 </div>
             </section>
-
-            
         </>
     )
 }
 
+const EmptyCart = () => {
+    return(
+        <h2 className="empty-cart">Your shopping cart is empty</h2>
+    )
+}
 
-export default Cart;
+
+
+export default CartPage;
