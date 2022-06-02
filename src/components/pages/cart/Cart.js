@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Card from '../../mini-card-item/mini-card-item';
-import Navigation from '../../navigation/navigation';
+import Card from '../../miniCardItem/MiniCardItem';
+import Navigation from '../../navigation/Navigation';
 import ShoppingCartItem from '../../shoppingCartItem/ShoppingCartItem';
 
 import './cart.scss';
@@ -9,20 +9,11 @@ import './cart.scss';
 const Cart = () => {
     const blends = useSelector(state => state.cart.blends);
 
-    // let total = (blends.map(item => +item.price)).reduce(function(a, b) {
-    //     return a + b;
-    // });
-  
-
-
-    // console.log(total)
-
     const [total, setTotal] = useState(0);
     const qw = (price) => {
         console.log(price);
-        setTotal(total=> total + price)
+        setTotal(total => total + price)
     }
-
 
     return(
         <>

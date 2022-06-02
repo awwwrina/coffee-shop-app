@@ -1,18 +1,19 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchCurrentBlend } from "./fullCardSlice";
-import { blendAdded } from "../pages/cart/cartSlice";
+import { fetchCurrentBlend } from "./fullCardPageSlice";
+import { blendAdded } from "../cart/cartSlice";
 
-import Spinner from "../spinner/Spinner";
-import Error from "../error/Error";
-import Navigation from "../navigation/navigation";
-import BlackBeans from "../black-beans/black-beans";
-import Footer from "../footer/footer";
-import Chevron from '../../icons/Chevron.js'
-import './full-card-page.scss';
+import Spinner from "../../spinner/Spinner";
+import Error from "../../error/Error";
+import Navigation from "../../navigation/Navigation";
+import BlackBeans from "../../blackBeans/BlackBeans";
+import Footer from "../../footer/Footer";
+import Chevron from '../../chevron/Chevron.js'
+import QuantityIndicator from "../../quantityIndicator/QuantityIndicator";
+import './fullCardPage.scss';
 
 const FullCardPage = () => {
     const {productId} = useParams();
@@ -51,7 +52,6 @@ const View = ({blend}) => {
         weight: blend.weight,
         price : blend.price
     }
-    console.log(itemCart);
     const dispatch = useDispatch();
     return(
         <section className="full-card">
@@ -87,6 +87,7 @@ const View = ({blend}) => {
                 <button 
                     className="btn item_add"
                     onClick={() => dispatch(blendAdded(itemCart))}>Add to cart</button>
+                <QuantityIndicator/>
 
             </div>
 

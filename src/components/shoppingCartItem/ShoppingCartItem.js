@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { quantityChanged } from '../pages/cart/cartSlice';
+import { quantityChanged, blendDeleted } from '../pages/cart/cartSlice';
 import QuantityCounter from '../quantityCounter/QuantityCounter';
 import bin from '../../icons/bin.png';
 import './shoppingCartItem.scss';
@@ -25,7 +25,9 @@ const ShoppingCartItem = ({id, img, name, weight, price}) => {
                 </div>
                 <QuantityCounter count={count} setCount={setCount}/>
                 <div className="price">${price}</div>
-                <button className="remove">
+                <button 
+                    className="remove"
+                    onClick={() => dispatch(blendDeleted({id}))}>
                     <img src={bin} alt="removeItem" />
                 </button>
             </div>

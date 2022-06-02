@@ -2,9 +2,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
-import Navigation  from '../../navigation/navigation';
-import BlackBeans from '../../black-beans/black-beans';
-import Footer from '../../footer/footer';
+import Navigation  from '../../navigation/Navigation';
+import BlackBeans from '../../blackBeans/BlackBeans';
+import Footer from '../../footer/Footer';
 
 import './auth.scss';
 

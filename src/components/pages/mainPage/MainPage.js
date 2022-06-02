@@ -4,12 +4,12 @@ import 'swiper/css';
 import "swiper/css/effect-coverflow";
 
 
-import Navigation from '../../navigation/navigation';
-import BlackBeans from '../../black-beans/black-beans';
-import Footer from '../../footer/footer';
+import Navigation from '../../navigation/Navigation';
+import BlackBeans from '../../blackBeans/BlackBeans';
+import Footer from '../../footer/Footer';
 import ThreeBeans from '../../../image/three-beans.png'
 
-import './main-page.scss'
+import './mainPage.scss'
 
 const MainPage = () => {
     return (
@@ -25,7 +25,7 @@ const MainPage = () => {
                     Want to try our beans?
                 </h2>
 
-                <button className='btn btn_light'>Shop now</button>
+                {/* <button className='btn btn_light'>Shop now</button> */}
             </section>
 
             <section className="about">
@@ -68,7 +68,7 @@ const MainPage = () => {
 
                 <Swiper
                     autoplay={{
-                        delay: 4000,
+                        delay: 3000,
                         pauseOnMouseEnter: true,
                         disableOnInteraction: false
                     }}

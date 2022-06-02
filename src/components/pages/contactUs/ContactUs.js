@@ -1,10 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 
-import Navigation from "../../navigation/navigation";
-import BlackBeans from "../../black-beans/black-beans";
+import Navigation from "../../navigation/Navigation";
+import BlackBeans from "../../blackBeans/BlackBeans";
 import CoffeeNotes from '../../../image/coffeeNotes.jpg';
-import Footer from '../../footer/footer';
+import Footer from '../../footer/Footer';
 
 import './contact-us.scss';
 const ContactUs = () => {

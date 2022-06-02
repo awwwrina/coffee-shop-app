@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainPage from '../pages/main-page/main-page';
+import MainPage from '../pages/mainPage/MainPage';
 import OurCoffee from '../pages/coffeeBeans/CoffeeBeans';
-import FullCardPage from '../full-card-page/full-card-page';
-import Pleasure from '../pages/pleasure/pleasure';
-import ContactUs from "../pages/contact-us/contact-us";
+import FullCardPage from '../pages/fullCardPage/FullCardPage';
+import Pleasure from '../pages/pleasure/Pleasure';
+import ContactUs from "../pages/contactUs/ContactUs";
 import Auth from "../pages/auth/Auth";
 import Registration from "../pages/registration/Registration";
 import Terms from "../pages/terms/Terms";

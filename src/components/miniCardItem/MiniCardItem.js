@@ -1,4 +1,4 @@
-import './mini-card-item.scss';
+import './miniCardItem.scss';
 
 const Card = ({img, name, country, price}) => {
     let slicedName =  name.slice(0, 20);

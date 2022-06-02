@@ -1,5 +1,5 @@
-import Navigation from '../navigation/navigation';
-import BlackBeans from '../black-beans/black-beans';
+import Navigation from '../navigation/Navigation';
+import BlackBeans from '../blackBeans/BlackBeans';
 
 import './footer.scss';
 

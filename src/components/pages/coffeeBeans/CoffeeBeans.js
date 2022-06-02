@@ -1,9 +1,9 @@
 import { useEffect, useState, } from 'react';
 import { Link } from 'react-router-dom';
-import Navigation from '../../navigation/navigation';
-import Card from '../../mini-card-item/mini-card-item';
-import BlackBeans from '../../black-beans/black-beans';
-import Footer from '../../footer/footer';
+import Navigation from '../../navigation/Navigation';
+import Card from '../../miniCardItem/MiniCardItem';
+import BlackBeans from '../../blackBeans/BlackBeans';
+import Footer from '../../footer/Footer';
 import Spinner from '../../spinner/Spinner';
 import Error from '../../error/Error';
 

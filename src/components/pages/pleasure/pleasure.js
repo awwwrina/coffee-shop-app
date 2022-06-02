@@ -1,7 +1,7 @@
-import Navigation from "../../navigation/navigation";
-import BlackBeans from "../../black-beans/black-beans";
-import Card from "../../mini-card-item/mini-card-item";
-import Footer from "../../footer/footer";
+import Navigation from "../../navigation/Navigation";
+import BlackBeans from "../../blackBeans/BlackBeans";
+import Card from "../../miniCardItem/MiniCardItem";
+import Footer from "../../footer/Footer";
 
 import Cup from '../../../image/cup-of-coffee.jpg';
 
