@@ -54,6 +54,7 @@ const View = ({blend}) => {
         quantity: 1,
         weight: blend.weight,
         price : blend.price, 
+        amount: 0
     }
     const dispatch = useDispatch();
     return(

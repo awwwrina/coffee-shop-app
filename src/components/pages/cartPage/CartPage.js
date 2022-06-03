@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Card from '../../miniCardItem/MiniCardItem';
 import Navigation from '../../navigation/Navigation';
 import ShoppingCartItem from '../../shoppingCartItem/ShoppingCartItem';
 
@@ -16,22 +15,16 @@ const CartPage = () => {
                 <h1 className="title">Shopping cart</h1>
             </section>
             {cart.length !== 0 && <Cart/>}
-            {cart.length == 0 && <EmptyCart/>}
+            {cart.length === 0 && <EmptyCart/>}
 
-           
-
-            
         </>
     )
 }
 
 const Cart = () => {
     const blends = useSelector(state => state.cart.blends);
+    const subtotal = useSelector(state => state.cart.subtotal)
 
-    const [total, setTotal] = useState(0);
-    const qw = (price) => {
-        setTotal(total => total + price)
-    }
     return(
         <>
             <section className="cart">
@@ -44,14 +37,14 @@ const Cart = () => {
                 
                 
                 <div className="cart__items">
-                    {blends.map(item => <ShoppingCartItem {...item} key={item.id} qw={qw}/>)}
+                    {blends.map(item => <ShoppingCartItem {...item} key={item.id} />)}
                 </div>
 
                 <div className="cart__subtotal">
                     <div className="title">
                         Cart subtotal:
                     </div>
-                    <div className="sum">${total}.00</div>
+                    <div className="sum">${subtotal}.00</div>
                 </div>
             </section>
         </>

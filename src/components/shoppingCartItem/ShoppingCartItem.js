@@ -10,17 +10,19 @@ import { useSelector } from 'react-redux';
 const ShoppingCartItem = ({id, name, weight, price}) => {
 
     const cartItems = useSelector(state => state.cart.blends);
-    const index = cartItems.findIndex(item => item.id === id)
-    const quantity = cartItems[index].quantity
+    const index = cartItems.findIndex(item => item.id === id);
+    const currentItem = cartItems[index];
+    const quantity = currentItem.quantity
 
     const [count, setCount] = useState(quantity);
     const dispatch = useDispatch();
     const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
 
     useEffect(() => {
-        dispatch(quantityChanged({id, count}))
+        dispatch(quantityChanged({id, count, price}))
     }, [count])
 
+    
 
     return(
         <>
