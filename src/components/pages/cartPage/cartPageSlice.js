@@ -11,7 +11,6 @@ const cartSlice = createSlice({
             // state.blends = [...state.blends, action.payload]
             const {id: actionId, count} = action.payload
             const index = state.blends.findIndex((item) => item.id === actionId);
-            console.log(index)
             if (index === -1) {
                 state.blends = [...state.blends, action.payload]
             } 

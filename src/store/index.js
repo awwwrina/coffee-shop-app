@@ -33,6 +33,6 @@ const saveCart = () => {
     };
 };
 
- store.subscribe(saveCart());
+store.subscribe(saveCart());
 
 export default store;

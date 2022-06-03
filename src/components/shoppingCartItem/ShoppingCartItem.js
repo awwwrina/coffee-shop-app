@@ -6,8 +6,14 @@ import QuantityCounter from '../quantityCounter/QuantityCounter';
 import bin from '../../icons/bin.png';
 import './shoppingCartItem.scss';
 
-const ShoppingCartItem = ({id, img, name, weight, price, qw}) => {
-    const [count, setCount] = useState(1);
+import { useSelector } from 'react-redux';
+const ShoppingCartItem = ({id, name, weight, price}) => {
+
+    const cartItems = useSelector(state => state.cart.blends);
+    const index = cartItems.findIndex(item => item.id === id)
+    const quantity = cartItems[index].quantity
+
+    const [count, setCount] = useState(quantity);
     const dispatch = useDispatch();
     const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
 

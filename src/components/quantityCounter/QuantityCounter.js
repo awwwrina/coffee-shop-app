@@ -1,9 +1,7 @@
 
-import { useSelector } from 'react-redux';
-
 import './quantityCounter.scss';
 
-const QuantityCounter = ({count, setCount,id}) => {
+const QuantityCounter = ({count, setCount}) => {
 
     const increment = () => {
         setCount(count => count + 1);
@@ -12,6 +10,7 @@ const QuantityCounter = ({count, setCount,id}) => {
     const decrement = () => {
         setCount(count => ( count > 1 ? count - 1 : 1));
     }
+
 
     return(
         <>
