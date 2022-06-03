@@ -82,6 +82,9 @@ p, h2 {
 			background-color: rgba(0, 0, 0, 0.2);
 		}
 	}
+	&_no-margin {
+		margin: 0;
+	}
 }
 
 .error__message {

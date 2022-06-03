@@ -87,10 +87,12 @@ const View = ({blend}) => {
                     {price}$
                 </div>
 
-                <button 
-                    className="btn item_add"
+
+                <div className="item_add"><button 
+                    className="btn btn_no-margin"
                     onClick={() => dispatch(blendAdded(itemCart))}>Add to cart</button>
-                <QuantityIndicator/>
+                <QuantityIndicator id={itemCart.id}/></div>
+                
 
             </div>
 

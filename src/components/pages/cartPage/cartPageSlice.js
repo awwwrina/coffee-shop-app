@@ -35,7 +35,8 @@ const cartSlice = createSlice({
                 return;
             }
             state.blends.splice([index], 1)
-        }
+        },
+        
         
     }
 })

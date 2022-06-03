@@ -40,7 +40,8 @@
         }
         &_add {
             grid-column: 2 / 3;
-            width: 150px;
+            width: 350px;
+            display: flex;
         }
 
         .bean {
