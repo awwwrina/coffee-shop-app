@@ -9,7 +9,6 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         blendAdded(state, action) {
-            // state.blends = [...state.blends, action.payload]
             const {id: actionId} = action.payload
             const index = state.blends.findIndex((item) => item.id === actionId);
             if (index === -1) {
@@ -27,9 +26,14 @@ const cartSlice = createSlice({
             if (index === -1) {
                 return;
             }
-            state.blends[index].quantity = count;
-            state.blends[index].amount = price * state.blends[index].quantity
-            state.subtotal = state.blends.map(item => item.amount).reduce((a,b)=>a+b);
+            if (count === 0) {
+                console.log(state.blends.splice([index], 1))
+            } else {
+                state.blends[index].quantity = count;
+                state.blends[index].amount = price * state.blends[index].quantity
+                state.subtotal = state.blends.map(item => item.amount).reduce((a,b)=>a+b);
+            }
+
             
         },
         
@@ -40,9 +44,8 @@ const cartSlice = createSlice({
                 return;
             }
             state.blends.splice([index], 1)
+            state.subtotal = state.blends.map(item => item.amount).reduce((a,b)=>a+b);
         }
-
-        
     }
 })
 

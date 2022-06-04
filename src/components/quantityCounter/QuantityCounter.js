@@ -8,7 +8,7 @@ const QuantityCounter = ({count, setCount}) => {
     }
 
     const decrement = () => {
-        setCount(count => ( count > 1 ? count - 1 : 1));
+        setCount(count => ( count > 1 ? count - 1 : 0));
     }
 
 
