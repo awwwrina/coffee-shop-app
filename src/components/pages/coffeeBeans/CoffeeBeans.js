@@ -94,7 +94,7 @@ const CoffeeBlends = () => {
                     {beansLoadingStatus === "error" && <Error/>}
                     {showBtn && beans.length && 
                     <button 
-                        className='btn btn_dark'
+                        className='btn btn_mt40'
                         onClick={() => setStart((start) => start + 6)}
                         >More</button> }
             </section >
