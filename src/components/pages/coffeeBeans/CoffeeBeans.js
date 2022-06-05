@@ -18,15 +18,15 @@ import { fetchBeans } from './coffeeBeansSlice';
 const CoffeeBlends = () => {
     const beansLoadingStatus = useSelector(state => state.beans.beansLoadingStatus);
     const showBtn = useSelector(state => state.beans.showBtn);
+    const beans = useSelector(state => state.beans.beans)
+    const offset = useSelector(state => state.beans.offset);
+
     const dispatch = useDispatch();
 
-    const [start, setStart] = useState(0);
-
-    const beans = useSelector(state => state.beans.beans)
- 
     useEffect(() => {
-        dispatch(fetchBeans(start));
-    }, [start]);
+        beans.length === 0 &&  dispatch(fetchBeans(offset))
+    }, [])
+
 
     function renderItemList(arr) {
         const items = arr.map(item => {
@@ -95,7 +95,7 @@ const CoffeeBlends = () => {
                     {showBtn && beans.length && 
                     <button 
                         className='btn btn_mt40'
-                        onClick={() => setStart((start) => start + 6)}
+                        onClick={() =>  dispatch(fetchBeans(offset))}
                         >More</button> }
             </section >
             <Footer/>

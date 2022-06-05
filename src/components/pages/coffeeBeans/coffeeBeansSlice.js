@@ -4,15 +4,16 @@ import { useHttp } from "../../../hooks/http.hook";
 const initialState = {
     beans: [], 
     beansLoadingStatus: 'idle',
-    showBtn: true
+    showBtn: true,
+    offset: 0
 }
 
 export const fetchBeans = createAsyncThunk(
     'beans/fetchBeans',
-    async (start = 0) => {
+    async (offset = 0) => {
         const {request} = useHttp();
         const url = 'http://localhost/';
-        return await request(`${url}api/coffee/product?limit=${start+6}&offset=${start}`)
+        return await request(`${url}api/coffee/product?limit=${offset+6}&offset=${offset}`)
 
     }
 );
@@ -20,9 +21,7 @@ export const fetchBeans = createAsyncThunk(
 const beansSlice = createSlice({
     name: 'beans',
     initialState,
-    reducers: {
-
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchBeans.pending, state => {state.beansLoadingStatus = 'loading'})
@@ -32,6 +31,7 @@ const beansSlice = createSlice({
                 if (action.payload.length < 6) {
                     state.showBtn = false;
                 }
+                state.offset += 6;
             })
             .addCase(fetchBeans.rejected, state => {state.beansLoadingStatus = 'error'})
             .addDefaultCase(() => {})
@@ -45,5 +45,5 @@ export default reducer;
 export const {
     beansFetching,
     beansFetched,
-    beansFetchingError,
+    beansFetchingError
 } = actions;
