@@ -5,10 +5,18 @@
         font-weight: 700;
         font-size: 14px;
     }
-    &_back {
-        display: inline;
-        position: relative;
-        top: -6px;
+    &__back {
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 150px;
+        &-title {
+            display: inline;
+            position: relative;
+            top: -6px;
+        }
+
     }
     
     .item {

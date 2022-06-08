@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -57,14 +57,15 @@ const View = ({blend}) => {
         amount: 0
     }
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
     return(
         <section className="full-card">
-            <Link
-                style={{textDecoration: 'none', color: 'black', marginLeft: '150px'}}
-                to="/our-coffee">
+            <button className="full-card__back" onClick={goBack}>
                     <Chevron/>     
-                    <div className="full-card_back">Back to List</div>        
-            </Link>
+                    <div className="full-card__back-title">Go back</div>
+            </button>
+
             <div className="item">
                 <img className="item_img" src={path} alt={name} />
                 <h2 className="item_title"> {name}</h2>
