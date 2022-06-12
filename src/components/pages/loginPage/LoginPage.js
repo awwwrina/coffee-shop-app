@@ -1,14 +1,19 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import Navigation  from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
 import Footer from '../../footer/Footer';
+import { fetchLogin } from './loginPageSlice';
 
-import './auth.scss';
+import './loginPage.scss';
 
 const Auth = () => {
+    const dispatch = useDispatch();
+
+    
     return (
         <>
             <section className='header header__auth'>
@@ -29,8 +34,11 @@ const Auth = () => {
                                     .required('Required field')
                                     .min(8, 'Must be longer than 8 characters'),
                         })}
-                        onSubmit = {values => console.log(JSON.stringify(values, null, 2))}>
-                    
+                        onSubmit = {
+                            values => 
+                                {dispatch(fetchLogin(values))
+                                    .then(res => localStorage.setItem('token',JSON.stringify(res.payload.token)))}}>
+                                    
                         <Form className="auth__form" >
                             <div required className="input-container auth__input_email">
                                 <label className="shift" htmlFor="email">Email</label>
@@ -57,7 +65,7 @@ const Auth = () => {
                                 name="password"
                                 className="error__message auth__error_password" 
                                 component="div"/>
-                            <button className="auth__btn btn">Sign in</button>
+                            <button type="submit" className="auth__btn btn">Sign in</button>
                         </Form>
                     </Formik>
                     <BlackBeans/>

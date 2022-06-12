@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import beans from '../components/pages/coffeeBeans/coffeeBeansSlice';
 import currentBlend from '../components/pages/fullCardPage/fullCardPageSlice';
 import cart from '../components/pages/cartPage/cartPageSlice';
+import registration from '../components/pages/registration/registrationPageSlice';
 
 const stringMiddleware = () => (next) => (action) => {
     if (typeof action === 'string') {
@@ -14,7 +15,7 @@ const stringMiddleware = () => (next) => (action) => {
 
 
 const store = configureStore({
-    reducer: {beans, currentBlend, cart},
+    reducer: {beans, currentBlend, cart, registration},
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
     devTools: process.env.NODE_ENV !== 'production'
 })

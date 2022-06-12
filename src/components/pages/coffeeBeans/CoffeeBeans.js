@@ -16,12 +16,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBeans } from './coffeeBeansSlice';
 
 const CoffeeBlends = () => {
-    const beansLoadingStatus = useSelector(state => state.beans.beansLoadingStatus);
-    const showBtn = useSelector(state => state.beans.showBtn);
-    const beans = useSelector(state => state.beans.beans)
-    const offset = useSelector(state => state.beans.offset);
+    const {beansLoadingStatus, showBtn, beans, offset} = useSelector(state => state.beans);
 
     const dispatch = useDispatch();
+
 
     useEffect(() => {
         beans.length === 0 &&  dispatch(fetchBeans(offset))

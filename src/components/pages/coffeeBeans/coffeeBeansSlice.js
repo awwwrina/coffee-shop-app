@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useHttp } from "../../../hooks/http.hook";
+import { useHttp } from "../../../hooks/useHttp";
 
 const initialState = {
     beans: [], 
@@ -14,7 +14,6 @@ export const fetchBeans = createAsyncThunk(
         const {request} = useHttp();
         const url = 'http://localhost/';
         return await request(`${url}api/coffee/product?limit=${offset+6}&offset=${offset}`)
-
     }
 );
 

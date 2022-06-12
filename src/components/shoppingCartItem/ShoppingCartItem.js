@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import { fetchCurrentBlend } from '../pages/fullCardPage/fullCardPageSlice';
 import { quantityChanged, blendDeleted } from '../pages/cartPage/cartPageSlice';
 import { SERVER_ADDRESS, SERVER_PORT } from '../../config';
 import QuantityCounter from '../quantityCounter/QuantityCounter';
@@ -18,8 +20,11 @@ const ShoppingCartItem = ({id, name, weight, price}) => {
     const dispatch = useDispatch();
     const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
 
+    const {productId} = useParams();
+
     useEffect(() => {
-        dispatch(quantityChanged({id, count, price}))
+        dispatch(quantityChanged({id, count, price}));
+        dispatch(fetchCurrentBlend(productId));
     }, [count])
 
     
@@ -27,6 +32,9 @@ const ShoppingCartItem = ({id, name, weight, price}) => {
     return(
         <>
             <div className="wrapper-item">
+                <Link 
+                    style={{textDecoration: 'none', color: 'black'}}
+                    to={`/our-coffee/${id}`}>
                 <div className="description">
                     <div className="img-wrapper">
                         <img src={path} alt={name} />
@@ -34,6 +42,8 @@ const ShoppingCartItem = ({id, name, weight, price}) => {
 
                     <div className="title">{name}</div>
                 </div>
+                </Link>
+               
                 <div className="weight">
                     {weight} kg
                 </div>

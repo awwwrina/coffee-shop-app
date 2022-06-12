@@ -44,7 +44,14 @@ const cartSlice = createSlice({
                 return;
             }
             state.blends.splice([index], 1)
-            state.subtotal = state.blends.map(item => item.amount).reduce((a,b)=>a+b);
+            
+            const amountArray =  state.blends.map(item => item.amount);
+            if (amountArray.length === 0) {
+                return;
+            } else {
+                state.subtotal = amountArray.reduce((a,b)=>a+b);
+            }
+
         }
     }
 })

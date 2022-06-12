@@ -21,6 +21,7 @@
             grid-row: 1 / 2;
             &-error {
                 grid-row: 2 / 3; 
+                display: inline;
             }
         }
         &__email {

@@ -1,7 +1,8 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Navigation from '../../navigation/Navigation';
 import ShoppingCartItem from '../../shoppingCartItem/ShoppingCartItem';
+
 
 import './cartPage.scss';
 
@@ -37,7 +38,8 @@ const Cart = () => {
                 
                 
                 <div className="cart__items">
-                    {blends.map(item => <ShoppingCartItem {...item} key={item.id} />)}
+                    {blends.map(item => 
+                        <ShoppingCartItem {...item} key={item.id} />)}
                 </div>
 
                 <div className="cart__subtotal">

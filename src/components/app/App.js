@@ -4,7 +4,7 @@ import OurCoffee from '../pages/coffeeBeans/CoffeeBeans';
 import FullCardPage from '../pages/fullCardPage/FullCardPage';
 import Pleasure from '../pages/pleasure/Pleasure';
 import ContactUs from "../pages/contactUs/ContactUs";
-import Auth from "../pages/auth/Auth";
+import Auth from '../pages/loginPage/LoginPage';
 import Registration from "../pages/registration/Registration";
 import Terms from "../pages/terms/Terms";
 import CartPage from "../pages/cartPage/CartPage";
@@ -25,6 +25,7 @@ const App = () => {
 						<Route path="/registration" element={<Registration/>} />
 						<Route path="/terms" element={<Terms />} />
 						<Route path="/cart" element={<CartPage/>}/>
+
 					</Routes>
 				</main>
 			</Router>
