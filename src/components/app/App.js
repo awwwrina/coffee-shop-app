@@ -8,13 +8,16 @@ import Auth from '../pages/loginPage/LoginPage';
 import Registration from "../pages/registration/Registration";
 import Terms from "../pages/terms/Terms";
 import CartPage from "../pages/cartPage/CartPage";
+import PersonalAccountPage from "../pages/personalAccount/PersonalAccountPage";
+
+import RequireAuth from "../hoc/RequireAuth";
 
 import './App.css';
 
 const App = () => {
 		return (
+				
 			<Router>
-				<main>
 					<Routes>
 						<Route path="/" element={<MainPage />} />
 						<Route path="/our-coffee" element={<OurCoffee />} />
@@ -25,9 +28,13 @@ const App = () => {
 						<Route path="/registration" element={<Registration/>} />
 						<Route path="/terms" element={<Terms />} />
 						<Route path="/cart" element={<CartPage/>}/>
+						<Route path="/account" element={
+							<RequireAuth>
+								<PersonalAccountPage/>
+							</RequireAuth>
+						}/>
 
 					</Routes>
-				</main>
 			</Router>
 		)
 }

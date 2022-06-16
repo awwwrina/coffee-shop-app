@@ -1,17 +1,28 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector} from 'react-redux';
 
 import Navigation  from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
 import Footer from '../../footer/Footer';
-import { fetchLogin } from './loginPageSlice';
+import { fetchLogin, setUser} from './loginPageSlice';
 
 import './loginPage.scss';
 
 const Auth = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const fromPage = location.state?.from?.pathname || '/';
+    console.log(fromPage)
     const dispatch = useDispatch();
+
+    const handleSubmit =  values => {
+        dispatch(fetchLogin(values))
+        navigate('/account', {replace:true})
+    
+    }
 
     
     return (
@@ -35,9 +46,8 @@ const Auth = () => {
                                     .min(8, 'Must be longer than 8 characters'),
                         })}
                         onSubmit = {
-                            values => 
-                                {dispatch(fetchLogin(values))
-                                    .then(res => localStorage.setItem('token',JSON.stringify(res.payload.token)))}}>
+                            values => {
+                                handleSubmit(values)}}>
                                     
                         <Form className="auth__form" >
                             <div required className="input-container auth__input_email">
@@ -65,14 +75,14 @@ const Auth = () => {
                                 name="password"
                                 className="error__message auth__error_password" 
                                 component="div"/>
-                            <button type="submit" className="auth__btn btn">Sign in</button>
+                                
+                            <button type="submit" className="auth__btn btn" >Sign in</button>
                         </Form>
                     </Formik>
                     <BlackBeans/>
                     <div className="create">
                         <div className="create__question">New to Aroma Coffee Roastery?</div>
                         <Link to="/registration" className="create__link">Create an account.</Link>
-                        {/* <a href="#" className="create__link">Create an account.</a> */}
                     </div>
             </section>
 
