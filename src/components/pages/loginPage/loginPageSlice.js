@@ -10,20 +10,6 @@ const initialState = {
 
 export const fetchLogin = createAsyncThunk(
     'user/fetchLogin',
-    // async (data, token) => {
-    //     const {request} = useHttp();
-    //     const url = 'http://localhost/';
-    //     return await 
-    //         request(
-    //             `${url}api/auth/login`,
-    //             'POST',
-    //             JSON.stringify(data),
-    //             {
-    //                 'Authorization': `bearer ${token}`,
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         )
-    // }
     async (data, token, rejectWithValue) => {
         const url = 'http://localhost/';
         try {
@@ -53,17 +39,7 @@ export const fetchLogin = createAsyncThunk(
 const loginPageSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {
-        setUser(state, action) {
-            state.email = action.payload.user.email;
-            state.name = action.payload.user.name;
-        },
-        removeUser(state) {
-            state.email = null;
-            state.name = null;
-        },
-
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchLogin.pending, (state, action) => {
@@ -72,10 +48,11 @@ const loginPageSlice = createSlice({
             .addCase(fetchLogin.fulfilled, (state, action) => {
                 state.email = action.payload.user.email;
                 state.name = action.payload.user.name;
+                state.loadingStatus = 'idle'
             })
             .addCase(fetchLogin.rejected, (state, action) => {
-                console.log(action.payload);
-                state.error = action.payload
+                state.error = action.payload;
+
             })
     }
 })

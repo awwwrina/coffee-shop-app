@@ -20,7 +20,7 @@ const Auth = () => {
 
     const handleSubmit =  values => {
         dispatch(fetchLogin(values))
-        navigate('/account', {replace:true})
+        navigate('/account', {replace:{fromPage}})
     
     }
 
