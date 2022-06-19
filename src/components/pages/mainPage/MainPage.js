@@ -4,10 +4,9 @@ import 'swiper/css';
 import "swiper/css/effect-coverflow";
 
 
-import Navigation from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
-import Footer from '../../footer/Footer';
 import ThreeBeans from '../../../image/three-beans.png'
+import Navigation from '../../navigation/Navigation';
 
 import './mainPage.scss'
 
