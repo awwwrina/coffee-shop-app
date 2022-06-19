@@ -130,8 +130,6 @@ const MainPage = () => {
                     </SwiperSlide>
                 </Swiper>
             </section>
-            
-            <Footer/>
         </>
     )
 }

@@ -20,11 +20,6 @@ const Navigation = ({color='black', registration = false}) => {
 						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}
 						to="/our-coffee">Coffee beans</NavLink>
 				</li>
-				{/* <li>
-					<NavLink 
-						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}
-						to="/pleasure">For your pleasure</NavLink>
-				</li> */}
 				<li>
 					<NavLink 
 						style={({isActive}) => ({color: isActive ? '#fcc07c' : ''})}

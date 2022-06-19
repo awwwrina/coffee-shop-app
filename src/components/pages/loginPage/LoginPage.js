@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 
 import Navigation  from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
-import Footer from '../../footer/Footer';
 import { fetchLogin } from './loginPageSlice';
 
 import './loginPage.scss';
@@ -75,8 +74,6 @@ const Auth = () => {
                         {/* <a href="#" className="create__link">Create an account.</a> */}
                     </div>
             </section>
-
-            <Footer/>
         </>
     )
 }

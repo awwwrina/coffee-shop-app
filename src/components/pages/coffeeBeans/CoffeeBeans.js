@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Navigation from '../../navigation/Navigation';
 import Card from '../../miniCardItem/MiniCardItem';
 import BlackBeans from '../../blackBeans/BlackBeans';
-import Footer from '../../footer/Footer';
 import Spinner from '../../spinner/Spinner';
 import Error from '../../error/Error';
 
@@ -96,7 +95,6 @@ const CoffeeBlends = () => {
                         onClick={() =>  dispatch(fetchBeans(offset))}
                         >More</button> }
             </section >
-            <Footer/>
         </>   
     )
 }

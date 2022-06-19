@@ -11,7 +11,6 @@ import Spinner from "../../spinner/Spinner";
 import Error from "../../error/Error";
 import Navigation from "../../navigation/Navigation";
 import BlackBeans from "../../blackBeans/BlackBeans";
-import Footer from "../../footer/Footer";
 import Chevron from '../../chevron/Chevron.js'
 import QuantityIndicator from "../../quantityIndicator/QuantityIndicator";
 import './fullCardPage.scss';
@@ -36,7 +35,6 @@ const FullCardPage = () => {
             {loadingStatus === "loading" && <Spinner/>}
             {loadingStatus === "error" && <Error/>}
             <View blend={blend}/>
-            <Footer />
         </>
     )
 

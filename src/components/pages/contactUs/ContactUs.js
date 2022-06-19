@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import Navigation from "../../navigation/Navigation";
 import BlackBeans from "../../blackBeans/BlackBeans";
 import CoffeeNotes from '../../../image/coffeeNotes.jpg';
-import Footer from '../../footer/Footer';
 
 import './contact-us.scss';
 const ContactUs = () => {
@@ -112,7 +111,6 @@ const ContactUs = () => {
                 
 
             </section>
-            <Footer/>
         </>
     )
 
