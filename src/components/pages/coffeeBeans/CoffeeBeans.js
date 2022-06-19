@@ -1,7 +1,7 @@
 import { useEffect, useState, } from 'react';
 import { Link } from 'react-router-dom';
-import Navigation from '../../navigation/Navigation';
 import Card from '../../miniCardItem/MiniCardItem';
+import Navigation from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
 import Spinner from '../../spinner/Spinner';
 import Error from '../../error/Error';
