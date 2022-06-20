@@ -2,8 +2,9 @@ import { SERVER_ADDRESS, SERVER_PORT } from '../../config';
 import './miniCardItem.scss';
 
 const Card = ({id, name, country, price}) => {
-    const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
+    const path = `${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
     let slicedName =  name.slice(0, 20);
+
     if (slicedName.length < name.length) {
         slicedName += '...'
     }
