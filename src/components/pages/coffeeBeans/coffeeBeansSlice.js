@@ -12,7 +12,7 @@ export const fetchBeans = createAsyncThunk(
     'beans/fetchBeans',
     async (offset = 0) => {
         const {request} = useHttp();
-        const url = 'http://localhost/';
+        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
         return await request(`${url}api/coffee/product?limit=${offset+6}&offset=${offset}`)
     }
 );

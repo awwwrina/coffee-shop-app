@@ -1,4 +1,4 @@
-import { useEffect, useState, } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../miniCardItem/MiniCardItem';
 import Navigation from '../../navigation/Navigation';

@@ -9,7 +9,7 @@ export const fetchLogin = createAsyncThunk(
     'user/fetchLogin',
     async (data, token) => {
         const {request} = useHttp();
-        const url = 'http://localhost/';
+        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
         return await 
             request(
                 `${url}api/auth/login`,
