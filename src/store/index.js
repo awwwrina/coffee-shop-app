@@ -13,18 +13,18 @@ const stringMiddleware = () => (next) => (action) => {
     return next(action)
 };
 
-
 const store = configureStore({
     reducer: {beans, currentBlend, cart, registration},
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
-    devTools: process.env.NODE_ENV !== 'production'
+    devTools: process.env.NODE_ENV !== 'production',
 })
+
 
 const saveCart = () => {
     let oldCart = window.localStorage.getItem('cart');
 
     return () => {
-        const cart = store.getState().cart.blends;
+        const cart = store.getState().cart.blends || [];
         const serialCart = JSON.stringify(cart);
 
         if (cart !== oldCart) {

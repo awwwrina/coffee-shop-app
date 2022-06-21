@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useHttp } from "../../../hooks/useHttp";
+import { URL } from "../../../config";
 
 const initialState = {
     currentBlend: [],
@@ -10,8 +11,7 @@ export const fetchCurrentBlend = createAsyncThunk(
     'beans/fetchCurrentBlend',
     async (id) => {
         const {request} = useHttp();
-        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
-        return await request(`${url}api/coffee/product/${id}`)
+        return await request(`${URL}/api/coffee/product/${id}`)
     }
 )
 

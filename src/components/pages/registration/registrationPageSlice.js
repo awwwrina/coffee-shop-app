@@ -1,18 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useHttp } from "../../../hooks/useHttp";
+import { URL } from "../../../config";
 
 const initialState = {
     requestSendingStatus: 'idle',
     error: null
-
 };
 
 export const fetchRegistration = createAsyncThunk(
     'registration/fetchRegistration',
     async (values, {rejectWithValue}) => {
-        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
         try {
-            const response = await fetch(`${url}api/auth/registration`,
+            const response = await fetch(`${URL}/api/auth/registration`,
             {
                 method: 'POST',
                 headers: {

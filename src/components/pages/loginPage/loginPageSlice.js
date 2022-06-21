@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useHttp } from "../../../hooks/useHttp";
+import { URL } from "../../../config";
 
 const initialState = {
-    email: null,
+    email: null
 };
 
 export const fetchLogin = createAsyncThunk(
     'user/fetchLogin',
     async (data, token) => {
         const {request} = useHttp();
-        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
         return await 
             request(
-                `${url}api/auth/login`,
+                `${URL}/api/auth/login`,
                 'POST',
                 JSON.stringify(data),
                 {

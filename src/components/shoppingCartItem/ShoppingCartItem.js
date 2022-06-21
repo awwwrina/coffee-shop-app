@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchCurrentBlend } from '../pages/fullCardPage/fullCardPageSlice';
 import { quantityChanged, blendDeleted } from '../pages/cartPage/cartPageSlice';
-import { SERVER_ADDRESS, SERVER_PORT } from '../../config';
+import { URL } from '../../config';
 import QuantityCounter from '../quantityCounter/QuantityCounter';
 import bin from '../../icons/bin.png';
 import './shoppingCartItem.scss';
@@ -18,7 +18,7 @@ const ShoppingCartItem = ({id, name, weight, price}) => {
 
     const [count, setCount] = useState(quantity);
     const dispatch = useDispatch();
-    const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
+    const path = `${URL}/${id}.jpg`;
 
     const {productId} = useParams();
 

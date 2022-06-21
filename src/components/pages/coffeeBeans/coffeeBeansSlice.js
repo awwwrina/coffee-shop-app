@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { useHttp } from "../../../hooks/useHttp";
 
+import {URL} from '../../../config';
+
+
 const initialState = {
     beans: [], 
     beansLoadingStatus: 'idle',
@@ -12,8 +15,7 @@ export const fetchBeans = createAsyncThunk(
     'beans/fetchBeans',
     async (offset = 0) => {
         const {request} = useHttp();
-        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
-        return await request(`${url}api/coffee/product?limit=${offset+6}&offset=${offset}`)
+        return await request(`${URL}/api/coffee/product?limit=${offset+6}&offset=${offset}`)
     }
 );
 

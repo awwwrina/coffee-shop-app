@@ -23,8 +23,6 @@ const MainPage = () => {
                     <br /><br />
                     Want to try our beans?
                 </h2>
-
-                {/* <button className='btn btn_light'>Shop now</button> */}
             </section>
 
             <section className="about">
