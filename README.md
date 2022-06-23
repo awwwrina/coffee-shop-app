@@ -1,9 +1,10 @@
+Приложение лежит тут:
+   http://44.201.255.53/
+Бэк:
+   https://github.com/awwwrina/serverForACR
 Запуск приложения: 
    npm start 
-
-Бэк лежит тут:
-   https://github.com/awwwrina/serverForACR
-
+   
 В разработке использовались следующие технологии:
 
 - HTML5
