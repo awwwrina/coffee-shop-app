@@ -3,6 +3,7 @@ import beans from '../components/pages/coffeeBeans/coffeeBeansSlice';
 import currentBlend from '../components/pages/fullCardPage/fullCardPageSlice';
 import cart from '../components/pages/cartPage/cartPageSlice';
 import registration from '../components/pages/registration/registrationPageSlice';
+import filters from '../components/filters/filtersSlice';
 
 const stringMiddleware = () => (next) => (action) => {
     if (typeof action === 'string') {
@@ -15,7 +16,7 @@ const stringMiddleware = () => (next) => (action) => {
 
 
 const store = configureStore({
-    reducer: {beans, currentBlend, cart, registration},
+    reducer: {beans, currentBlend, cart, registration, filters},
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
     devTools: process.env.NODE_ENV !== 'production'
 })
