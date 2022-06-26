@@ -10,7 +10,7 @@ const initialState = {
 export const fetchRegistration = createAsyncThunk(
     'registration/fetchRegistration',
     async (values, {rejectWithValue}) => {
-        const url = 'http://localhost/';
+        const url = 'https://91nthnxin2.execute-api.us-east-2.amazonaws.com/';
         try {
             const response = await fetch(`${url}api/auth/registration`,
             {
