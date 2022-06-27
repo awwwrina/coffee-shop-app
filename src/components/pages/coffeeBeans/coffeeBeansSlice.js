@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
 import { useHttp } from "../../../hooks/useHttp";
 
 import {URL} from '../../../config';
@@ -38,6 +38,17 @@ const beansSlice = createSlice({
             .addDefaultCase(() => {})
     }
 });
+export const filteredCardsSelector = createSelector(
+    state => state.filters.activeFilter,
+    state => state.beans.beans,
+    (filter, beans) => {
+        if (filter === 'All') {
+            return beans;
+        } else {
+            return beans.filter(item => item.country === filter);
+        }
+    }
+)
 
 const {actions, reducer} = beansSlice;
 
