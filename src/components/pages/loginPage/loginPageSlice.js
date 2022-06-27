@@ -1,39 +1,25 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { URL } from "../../../config";
 import { useHttp } from "../../../hooks/useHttp";
-import { useNavigate } from "react-router-dom";
+
 const initialState = {
-    email: null,
-    name: null,
-    error: null,
-    loadingStatus: 'idle'
+    email: null
 };
 
 export const fetchLogin = createAsyncThunk(
     'user/fetchLogin',
-    async (data, token, rejectWithValue) => {
-        const url = 'http://localhost/';
-        try {
-            const response = await fetch(`${url}api/auth/login`,
-            {
-                method: 'POST',
-                headers: {
+    async (data, token) => {
+        const {request} = useHttp();
+        return await 
+            request(
+                `${URL}api/auth/login`,
+                'POST',
+                JSON.stringify(data),
+                {
                     'Authorization': `bearer ${token}`,
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            if(!response.ok) {
-                throw new Error(response.body)
-            }
-            const data1 = await response.json();
-            sessionStorage.setItem('token', data1.token)
-
-            return data1;
-        } catch (error) {
-            return rejectWithValue(error.message);
-        }
-            
-       
+                }
+            )
     }
 )
 const loginPageSlice = createSlice({

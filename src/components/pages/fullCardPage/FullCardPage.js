@@ -5,13 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCurrentBlend } from "./fullCardPageSlice";
 import { blendAdded } from "../cartPage/cartPageSlice";
 
-import { SERVER_ADDRESS, SERVER_PORT } from "../../../config";
+import { URL } from "../../../config";
 
 import Spinner from "../../spinner/Spinner";
 import Error from "../../error/Error";
 import Navigation from "../../navigation/Navigation";
 import BlackBeans from "../../blackBeans/BlackBeans";
-import Footer from "../../footer/Footer";
 import Chevron from '../../chevron/Chevron.js'
 import QuantityIndicator from "../../quantityIndicator/QuantityIndicator";
 import './fullCardPage.scss';
@@ -36,16 +35,13 @@ const FullCardPage = () => {
             {loadingStatus === "loading" && <Spinner/>}
             {loadingStatus === "error" && <Error/>}
             <View blend={blend}/>
-            <Footer />
         </>
     )
-
-
 }
 
 const View = ({blend}) => {
     const {name, country, price, id, description, weight} = blend;
-    const path = `http://${SERVER_ADDRESS}:${SERVER_PORT}/${id}.jpg`;
+    const path = `${URL}/${id}.jpg`;
     const itemCart = {
         id: blend.id,
         name: blend.name,

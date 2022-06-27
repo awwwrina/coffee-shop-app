@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Navigation from '../../navigation/Navigation';
 import ShoppingCartItem from '../../shoppingCartItem/ShoppingCartItem';
 

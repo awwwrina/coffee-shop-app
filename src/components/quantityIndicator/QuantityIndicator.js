@@ -7,10 +7,10 @@ const QuantityIndicator = ({id}) => {
     const cartItems = useSelector(state => state.cart.blends);
     const index = cartItems.findIndex(item => item.id === id)
     let quantity;
-    if ( index == -1) {
+    if ( index === -1) {
         quantity = 0;
     } else {
-        quantity = cartItems[index].quantity
+        quantity = cartItems[index].quantity;
     }
     return(
         <> { index !== -1 && 

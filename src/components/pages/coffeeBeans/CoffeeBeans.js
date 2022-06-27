@@ -1,11 +1,12 @@
-import { useEffect, useState, } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navigation from '../../navigation/Navigation';
+
 import Card from '../../miniCardItem/MiniCardItem';
+import Navigation from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
-import Footer from '../../footer/Footer';
 import Spinner from '../../spinner/Spinner';
 import Error from '../../error/Error';
+import Filters from '../../filters/Filters';
 
 import Girl from '../../../image/girl.jpg'
 
@@ -13,13 +14,13 @@ import Girl from '../../../image/girl.jpg'
 import './coffeeBeans.scss';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchBeans } from './coffeeBeansSlice';
+import { fetchBeans, filteredCardsSelector } from './coffeeBeansSlice';
 
 const CoffeeBlends = () => {
     const {beansLoadingStatus, showBtn, beans, offset} = useSelector(state => state.beans);
 
     const dispatch = useDispatch();
-
+    const filteredCards = useSelector(filteredCardsSelector);
 
     useEffect(() => {
         beans.length === 0 &&  dispatch(fetchBeans(offset))
@@ -45,7 +46,7 @@ const CoffeeBlends = () => {
         )
     }
     
-    const cards = renderItemList(beans);
+    const cards = renderItemList(filteredCards);
     
     return (
         <>
@@ -69,34 +70,17 @@ const CoffeeBlends = () => {
 
             <div className="divider"></div>
 
-            <section className="coffee_cards">
-                <div className="option">
-                    <div className="search">
-                        <label className="search_label">Looking for</label>
-                        <input className="search_input" type="text" placeholder="start typing here..." name="" id=""/>
-                    </div>
-
-                    <div className="filter">
-                        <div className="filter_label">Or filter</div>
-                    
-                        <div className="countries">
-                        <button className="filter_country">All</button>
-                            <button className="filter_country">Brazil</button>
-                            <button className="filter_country">Kenya</button>
-                            <button className="filter_country">Columbia</button>
-                        </div>
-                    </div>
-                </div>
-                    {beans.length && cards}
-                    {beansLoadingStatus === "loading" && <Spinner/>}
-                    {beansLoadingStatus === "error" && <Error/>}
-                    {showBtn && beans.length && 
-                    <button 
-                        className='btn btn_mt40'
-                        onClick={() =>  dispatch(fetchBeans(offset))}
-                        >More</button> }
+            <section className="coffee-cards">
+                <Filters/>
+                {beans.length && cards}
+                {beansLoadingStatus === "loading" && <Spinner/>}
+                {beansLoadingStatus === "error" && <Error/>}
+                {showBtn && beans.length && 
+                <button 
+                    className='btn btn_m40'
+                    onClick={() =>  dispatch(fetchBeans(offset))}
+                    >More</button> }
             </section >
-            <Footer/>
         </>   
     )
 }

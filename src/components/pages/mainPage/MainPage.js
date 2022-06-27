@@ -4,10 +4,9 @@ import 'swiper/css';
 import "swiper/css/effect-coverflow";
 
 
-import Navigation from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
-import Footer from '../../footer/Footer';
 import ThreeBeans from '../../../image/three-beans.png'
+import Navigation from '../../navigation/Navigation';
 
 import './mainPage.scss'
 
@@ -24,8 +23,6 @@ const MainPage = () => {
                     <br /><br />
                     Want to try our beans?
                 </h2>
-
-                {/* <button className='btn btn_light'>Shop now</button> */}
             </section>
 
             <section className="about">
@@ -130,8 +127,6 @@ const MainPage = () => {
                     </SwiperSlide>
                 </Swiper>
             </section>
-            
-            <Footer/>
         </>
     )
 }

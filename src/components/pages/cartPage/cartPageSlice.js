@@ -16,8 +16,6 @@ const cartSlice = createSlice({
             } 
                else { state.blends[index].quantity += 1;
             }
-
-
         },
             
         quantityChanged(state, action) {

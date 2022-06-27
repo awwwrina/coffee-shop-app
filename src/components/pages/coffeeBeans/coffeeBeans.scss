@@ -17,73 +17,13 @@
     text-align: center;
 }
 
-.coffee_cards {
+.coffee-cards {
     margin-top: 60px;
-    
-    .option {
-        display: flex;
-        width: 800px;
-        font-size: 14px;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        margin: auto;
-    }
-    .search {
-        &_label {
-            margin-right: 20px;
-        }
-        &_input  {
-            text-align: center;
-            width: 180px;
-            height: 30px;
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-            border-radius: 4px;
-            font-size: 12px;
-            outline: none;
-            border:none;
-        }
-    }
-    .filter {
-        display: flex;
-        align-items: center;
-        .countries {
-            display: flex;
-            width: 300px;
-            justify-content: space-between;
-            
-        }
-        &_country {
-            height: 30px;
-            width: 75px;
-            font-size: 12px;
-            padding-top: 7px;
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-            cursor: pointer;
-            transition: box-shadow 0.5s;
-            border: none;
-            &:hover {
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
-            }
-            &:first-child {
-                border-radius: 4px 0px 0px 4px;
-            }
-            &:last-child {
-                border-radius: 0px 4px 4px 0px;
-            }
-        }
-        &_label {
-            display: inline-block;
-            margin-left: 83px;
-            margin-right: 35px;
-        }
-        
-    }
     .container {
         margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(3, 220px);
-        grid-template-rows: repeat(2, 260px);
+        grid-template-rows: 260px;
         grid-auto-rows: auto;
         grid-auto-flow: row;
         gap: 60px 70px;

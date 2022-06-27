@@ -1,12 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 import Navigation  from '../../navigation/Navigation';
 import BlackBeans from '../../blackBeans/BlackBeans';
-import Footer from '../../footer/Footer';
-import { fetchLogin, setUser} from './loginPageSlice';
+import { fetchLogin } from './loginPageSlice';
 
 import './loginPage.scss';
 
@@ -85,8 +84,6 @@ const Auth = () => {
                         <Link to="/registration" className="create__link">Create an account.</Link>
                     </div>
             </section>
-
-            <Footer/>
         </>
     )
 }

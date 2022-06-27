@@ -3,29 +3,18 @@ import beans from '../components/pages/coffeeBeans/coffeeBeansSlice';
 import currentBlend from '../components/pages/fullCardPage/fullCardPageSlice';
 import cart from '../components/pages/cartPage/cartPageSlice';
 import registration from '../components/pages/registration/registrationPageSlice';
-import user from '../components/pages/loginPage/loginPageSlice';
-
-const stringMiddleware = () => (next) => (action) => {
-    if (typeof action === 'string') {
-        return next({
-            type: action
-        })
-    }
-    return next(action)
-};
-
+import filters from '../components/filters/filtersSlice';
 
 const store = configureStore({
-    reducer: {beans, currentBlend, cart, registration, user},
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
-    devTools: process.env.NODE_ENV !== 'production'
+    reducer: {beans, currentBlend, cart, registration, filters},
+    devTools: process.env.NODE_ENV !== 'production',
 })
 
 const saveCart = () => {
     let oldCart = window.localStorage.getItem('cart');
 
     return () => {
-        const cart = store.getState().cart.blends;
+        const cart = store.getState().cart.blends || [];
         const serialCart = JSON.stringify(cart);
 
         if (cart !== oldCart) {
