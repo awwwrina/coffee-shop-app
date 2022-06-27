@@ -77,7 +77,7 @@ const CoffeeBlends = () => {
                 {beansLoadingStatus === "error" && <Error/>}
                 {showBtn && beans.length && 
                 <button 
-                    className='btn btn_mt40'
+                    className='btn btn_m40'
                     onClick={() =>  dispatch(fetchBeans(offset))}
                     >More</button> }
             </section >

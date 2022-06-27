@@ -23,7 +23,7 @@
         margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(3, 220px);
-        grid-template-rows: repeat(2, 260px);
+        grid-template-rows: 260px;
         grid-auto-rows: auto;
         grid-auto-flow: row;
         gap: 60px 70px;
