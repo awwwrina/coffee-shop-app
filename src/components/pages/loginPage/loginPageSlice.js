@@ -1,25 +1,39 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { URL } from "../../../config";
-import { useHttp } from "../../../hooks/useHttp";
 
 const initialState = {
-    email: null
+    email: null,
+    name: null,
+    error: null,
+    loadingStatus: 'idle'
 };
-
 export const fetchLogin = createAsyncThunk(
     'user/fetchLogin',
-    async (data, token) => {
-        const {request} = useHttp();
-        return await 
-            request(
-                `${URL}api/auth/login`,
-                'POST',
-                JSON.stringify(data),
-                {
-                    'Authorization': `bearer ${token}`,
+    async (values, {rejectWithValue}) => {
+        try {
+            const response = await fetch(`${URL}/api/auth/login`,
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
                     'Content-Type': 'application/json'
-                }
-            )
+                },
+                body: JSON.stringify(values)
+            })
+            if(!response.ok) {
+                throw new Error(response.body)
+            }
+            const data = await response.json();
+
+            console.log(data)
+
+            sessionStorage.setItem('token', data.token);
+            sessionStorage.setItem('name', data.user.name);
+
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
     }
 )
 const loginPageSlice = createSlice({
@@ -37,8 +51,8 @@ const loginPageSlice = createSlice({
                 state.loadingStatus = 'idle'
             })
             .addCase(fetchLogin.rejected, (state, action) => {
+                console.log(action.payload);
                 state.error = action.payload;
-
             })
     }
 })

@@ -28,8 +28,6 @@ export const fetchRegistration = createAsyncThunk(
         } catch (error) {
             return rejectWithValue(error.message);
         }
-            
-       
     }
 )
 

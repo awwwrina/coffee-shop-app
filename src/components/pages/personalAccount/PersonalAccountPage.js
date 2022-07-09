@@ -1,6 +1,20 @@
+import Navigation from '../../navigation/Navigation';
+import { useNavigate } from 'react-router-dom';
+
 const PersonalAccountPage = () => {
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        sessionStorage.setItem('token', '');
+        navigate('/login');
+    }
     return(
-        <div className="qq">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum earum consequatur cumque culpa ut assumenda ullam aperiam, eius sit quod similique esse veritatis atque possimus hic, ipsam temporibus velit ipsum?</div>
+        <>
+            <section className='header header__account'>
+                <Navigation color='white'/> 
+                <h1 className="title">Hello, {sessionStorage.getItem('name')}!</h1>
+            </section>
+            <button onClick={() => handleLogout()}>Logout</button>
+        </>
     )
 }
 

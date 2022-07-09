@@ -11,18 +11,12 @@ import './loginPage.scss';
 
 const Auth = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-    console.log(location);
-    const fromPage = location.state?.from?.pathname || '/';
-    console.log(fromPage)
     const dispatch = useDispatch();
 
-    const handleSubmit =  values => {
-        dispatch(fetchLogin(values))
-        navigate('/account', {replace:{fromPage}})
-    
+    const handleSubmit =  async values => {
+        dispatch(fetchLogin(values));
+        navigate('/account');
     }
-
     
     return (
         <>
@@ -45,8 +39,8 @@ const Auth = () => {
                                     .min(8, 'Must be longer than 8 characters'),
                         })}
                         onSubmit = {
-                            values => {
-                                handleSubmit(values)}}>
+                            values => 
+                                handleSubmit(values)}>
                                     
                         <Form className="auth__form" >
                             <div required className="input-container auth__input_email">
