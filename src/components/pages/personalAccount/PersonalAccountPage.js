@@ -1,6 +1,6 @@
 import Navigation from '../../navigation/Navigation';
 import { useNavigate } from 'react-router-dom';
-
+import './personalAccountPage.scss';
 const PersonalAccountPage = () => {
     const navigate = useNavigate();
     const handleLogout = () => {
@@ -13,7 +13,11 @@ const PersonalAccountPage = () => {
                 <Navigation color='white'/> 
                 <h1 className="title">Hello, {sessionStorage.getItem('name')}!</h1>
             </section>
-            <button onClick={() => handleLogout()}>Logout</button>
+            <section className="user">
+                <p>Your name: {sessionStorage.getItem('name')}</p>
+                <p>Your email: {sessionStorage.getItem('email')}</p>
+            </section>
+            <button className='btn btn_m40' onClick={() => handleLogout()}>Logout</button>
         </>
     )
 }
