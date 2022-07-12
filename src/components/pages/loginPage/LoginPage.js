@@ -14,7 +14,7 @@ const Auth = () => {
     const dispatch = useDispatch();
 
     const handleSubmit =  async values => {
-        dispatch(fetchLogin(values));
+        await dispatch(fetchLogin(values));
         navigate('/account');
     }
     
