@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 import Card from '../../miniCardItem/MiniCardItem';
 import Navigation from '../../navigation/Navigation';
@@ -7,6 +8,7 @@ import BlackBeans from '../../blackBeans/BlackBeans';
 import Spinner from '../../spinner/Spinner';
 import Error from '../../error/Error';
 import Filters from '../../filters/Filters';
+import MobileFilters from '../../mobileFilters/mobileFilters';
 
 import Girl from '../../../image/girl.jpg'
 
@@ -21,6 +23,9 @@ const CoffeeBlends = () => {
 
     const dispatch = useDispatch();
     const filteredCards = useSelector(filteredCardsSelector);
+
+    const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
+    const isDesktop = useMediaQuery({ query: '(min-width: 501px)'}) 
 
     useEffect(() => {
         beans.length === 0 &&  dispatch(fetchBeans(offset))
@@ -57,7 +62,7 @@ const CoffeeBlends = () => {
            
             <section className="about-coffee">
                 <div className="wrapper">
-                    <img src={Girl} alt="" />
+                    {isDesktop && <img src={Girl} alt="Girl" />}
                     <h2 className="title">About our beans</h2>
                     <BlackBeans />
                     <p className="descr">
@@ -71,7 +76,8 @@ const CoffeeBlends = () => {
             <div className="divider"></div>
 
             <section className="coffee-cards">
-                <Filters/>
+                {isDesktop && <Filters/>}
+                {isMobile && <MobileFilters/>}
                 {beans.length && cards}
                 {beansLoadingStatus === "loading" && <Spinner/>}
                 {beansLoadingStatus === "error" && <Error/>}

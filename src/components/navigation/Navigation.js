@@ -9,7 +9,7 @@ import { slide as Menu } from 'react-burger-menu';
 const Navigation = ({color='black', registration = false}) => {
 	const isAuth = sessionStorage.getItem('token');
 	const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
-    const isDesktop = useMediaQuery({ query: '(min-width: 901px)'})
+    const isDesktop = useMediaQuery({ query: '(min-width: 901px)'});
 
 	return (
 		<> 
