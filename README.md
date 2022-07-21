@@ -14,5 +14,6 @@
 - React
 - React Router
 - React Redux, Redux Toolkit
+- Swiper
 - Formik
 - Yup
