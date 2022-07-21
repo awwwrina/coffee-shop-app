@@ -5,6 +5,8 @@ const PersonalAccountPage = () => {
     const navigate = useNavigate();
     const handleLogout = () => {
         sessionStorage.setItem('token', '');
+        sessionStorage.setItem('name', '');
+        sessionStorage.setItem('email', '');
         navigate('/login');
     }
     return(

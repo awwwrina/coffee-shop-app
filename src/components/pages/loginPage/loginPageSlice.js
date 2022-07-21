@@ -25,10 +25,9 @@ export const fetchLogin = createAsyncThunk(
             }
             const data = await response.json();
 
-            console.log(data)
-
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('name', data.user.name);
+            sessionStorage.setItem('email', data.user.email);
 
             return data;
         } catch (error) {
@@ -42,7 +41,7 @@ const loginPageSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchLogin.pending, (state, action) => {
+            .addCase(fetchLogin.pending, (state) => {
                 state.loadingStatus = 'loading';
             })
             .addCase(fetchLogin.fulfilled, (state, action) => {

@@ -1,17 +1,18 @@
+
 .promo {
     background: url('../../../image/main-background.jpg') center center / cover no-repeat;
     padding-top: 52px;
     text-align: center;
     color: #ffffff;
-    height: 100VH;
+    height: 100vh;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    &_header {
+    &__header {
         margin-top: 180px;
         margin-bottom: 0;
         font-weight: 700;
         font-size: 40px;
     }
-    &_subheader {
+    &__subheader {
         margin-top: 35px;
         font-size: 24px;
     }
@@ -21,11 +22,11 @@
     padding-top: 80px;
     text-align: center;
     height: 520px;
-    &_header {
+    &__header {
         font-weight: 400;
         font-size: 24px;
     }
-    &_descr {
+    &__descr {
         width: 590px;
         margin: 41px auto 0px;
         font-weight: 400;
@@ -40,12 +41,12 @@
     padding-top: 255px;
     text-align: center;
     color: #fff;
-    &_header {
+    &__header {
         font-weight: 700;
         font-size: 40px;
 
     }
-    &_subheader {
+    &__subheader {
         font-size: 24px;
         margin: 30px 0;
     }
@@ -53,7 +54,7 @@
 
 .opinions  {
     background: url('../../../image/opinionsBG.jpg') center center / cover no-repeat;
-    padding: 70px;
+    padding: 70px 30px;
     &__header {
         text-align: center;
         font-weight: 700;
@@ -68,10 +69,10 @@
         width: 1400px;
     }
     .card {
-        width: 430px;
+        width: 300px;
         height: 450px;
         background: rgba(255, 255, 255, 0.8);
-        padding: 30px;
+        padding: 20px;
         border-radius: 20px;
         &__header {
             font-size: 24px;
@@ -92,4 +93,162 @@
         }
     }
 }
+
+
+@media (max-width: 1400px) and (min-width: 1301px){
+    .opinions .carousel {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        width: 1200px;
+    }
+}
+@media (max-width: 1300px) and (min-width: 1101px){
+    .opinions {
+        padding: 70px 0;
+        .carousel {
+            width: 1080px;
+            height: 500px;
+        }
+        .card {
+            height: 470px;
+        }
+    }
+}
+@media (max-width: 1100px) and (min-width: 901px){
+    .opinions {
+        .carousel {
+            width: 80%;
+            height: 400px;
+            .card {
+                width: 100%;
+                height: 350px;
+            }
+        }
+
+    }
+}
+@media (max-width: 900px) and (min-width: 701px){
+    .promo {
+        padding-top: 1px;
+    }
+    .opinions {
+        .carousel {
+            width: 90%;
+            height: 400px;
+            .card {
+                width: 100%;
+                height: 350px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 701px) and (min-width: 501px){
+    .promo {
+        padding-top: 1px;
+        &__header {
+            margin-top: 90px;
+            font-size: 28px;
+        }
+        &__subheader {
+            margin-top: 35px;
+            font-size: 20px;
+        }
+    }
+    .about, .difference {
+        padding: 40px 0;
+        text-align: center;
+        height: auto;
+        &__descr {
+            margin: 40px auto 0px;
+            font-size: 16px;
+            line-height: 20px;
+            width: 90%;
+        }
+    }
+    .blends {
+        height: 100vh;
+        padding-top: 10px;
+        &__header {
+            margin-top: 90px;
+            font-size: 28px;
+        }
+        &__subheader {
+            margin-top: 35px;
+            font-size: 20px;
+        }
+    }
+    .opinions {
+        &__header {
+            font-size: 28px;
+        }
+        .carousel {
+            width: 90%;
+            height: 400px;
+            .card {
+                width: 100%;
+                height: 350px;
+            }
+        }
+    }
+}
+@media (max-width: 501px) and (min-width: 320px){
+    .promo {
+        padding-top: 1px;
+        &__header {
+            margin-top: 90px;
+            font-size: 28px;
+        }
+        &__subheader {
+            margin-top: 35px;
+            font-size: 20px;
+        }
+    }
+    .about, .difference {
+        padding: 40px 0;
+        text-align: center;
+        height: auto;
+        &__descr {
+            margin: 40px auto 0px;
+            font-size: 16px;
+            line-height: 20px;
+            width: 90%;
+        }
+    }
+    .blends {
+        height: 100vh;
+        padding-top: 10px;
+        &__header {
+            margin-top: 90px;
+            font-size: 28px;
+        }
+        &__subheader {
+            margin-top: 35px;
+            font-size: 20px;
+        }
+    }
+    .opinions {
+        padding: 40px 0;
+        &__header {
+            font-size: 24px;
+        }
+        .carousel {
+            width: 90%;
+            height: 480px;
+            .card {
+                width: 100%;
+                &__header {
+                    font-size: 20px
+                }
+                &__descr {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+
 
