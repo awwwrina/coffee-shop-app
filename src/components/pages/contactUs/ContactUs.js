@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
+import { useMediaQuery } from 'react-responsive';
 
 import Navigation from "../../navigation/Navigation";
 import BlackBeans from "../../blackBeans/BlackBeans";
@@ -7,6 +8,7 @@ import CoffeeNotes from '../../../image/coffeeNotes.jpg';
 
 import './contact-us.scss';
 const ContactUs = () => {
+    const isDesktop = useMediaQuery({ query: '(min-width: 701px)'}) ;
     return(
         <>
             <section className="header header__contacts">
@@ -20,7 +22,7 @@ const ContactUs = () => {
                 <BlackBeans />
                 <div className="container">
                     
-                    <img src={CoffeeNotes} alt="CoffeeNotes" className="contacts__img"/>
+                    {isDesktop && <img src={CoffeeNotes} alt="CoffeeNotes" className="contacts__img"/>}
                     
                     <p className="contacts__request">
                         Have a question? Concern? Request? We’d love to hear from you. Connect with us through the following ways.
