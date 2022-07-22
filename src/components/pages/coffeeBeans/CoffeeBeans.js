@@ -25,7 +25,7 @@ const CoffeeBlends = () => {
     const filteredCards = useSelector(filteredCardsSelector);
 
     const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
-    const isDesktop = useMediaQuery({ query: '(min-width: 501px)'}) 
+    const isDesktop = useMediaQuery({ query: '(min-width: 501px)'});
 
     useEffect(() => {
         beans.length === 0 &&  dispatch(fetchBeans(offset))

@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useMediaQuery } from 'react-responsive';
 
 import { fetchCurrentBlend } from "./fullCardPageSlice";
 import { blendAdded } from "../cartPage/cartPageSlice";
@@ -54,11 +55,20 @@ const View = ({blend}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
+    const isMobile = useMediaQuery({ query: '(max-width: 1100px)' });
+
     return(
         <section className="full-card">
             <button className="full-card__back" onClick={goBack}>
+                    {
+                    isMobile ? 
+                    <Chevron/> : 
+                    <>
                     <Chevron/>     
                     <div className="full-card__back-title">Go back</div>
+                    </>
+                    }
+                    
             </button>
 
             <div className="item">
